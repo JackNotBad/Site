@@ -1,3 +1,9 @@
 <?php //easyadmin.routes.route_to_fqcn
 
-return [PHP_INT_MAX, []];
+return [PHP_INT_MAX, [
+    'admin' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => null,
+        'crudAction' => null,
+    ],
+]];
