@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \Container3ANTJTt\App_KernelDevDebugContainer([
     'container.build_hash' => '3ANTJTt',
-    'container.build_id' => 'ee85be9b',
-    'container.build_time' => 1760993136,
+    'container.build_id' => 'a6c4efef',
+    'container.build_time' => 1760993406,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'Container3ANTJTt');
