@@ -6,6 +6,286 @@ return [PHP_INT_MAX, [
         'crudControllerFqcn' => null,
         'crudAction' => null,
     ],
+    'admin_carousel_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_carousel_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_carousel_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_carousel_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_carousel_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_carousel_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_carousel_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_carousel_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController',
+        'crudAction' => 'detail',
+    ],
+    'admin_carousel_image_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_carousel_image_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_carousel_image_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_carousel_image_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_carousel_image_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_carousel_image_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_carousel_image_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_carousel_image_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
+        'crudAction' => 'detail',
+    ],
+    'admin_image_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_image_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_image_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_image_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_image_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_image_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_image_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_image_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',
+        'crudAction' => 'detail',
+    ],
+    'admin_message_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_message_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_message_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_message_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_message_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_message_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_message_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_message_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController',
+        'crudAction' => 'detail',
+    ],
+    'admin_price_list_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_price_list_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_price_list_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_price_list_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_price_list_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_price_list_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_price_list_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_price_list_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController',
+        'crudAction' => 'detail',
+    ],
+    'admin_section_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_section_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_section_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_section_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_section_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_section_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_section_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_section_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController',
+        'crudAction' => 'detail',
+    ],
+    'admin_slider_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_slider_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_slider_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_slider_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_slider_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_slider_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_slider_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_slider_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
+        'crudAction' => 'detail',
+    ],
     'admin_user_index' => [
         'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
         'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController',

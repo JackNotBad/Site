@@ -2,6 +2,14 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Image;
+use App\Entity\Slider;
+use App\Entity\Message;
+use App\Entity\Section;
+use App\Entity\Carousel;
+use App\Entity\PriceList;
+use App\Entity\CarouselImage;
+use App\Controller\Admin\UserCrudController;
 use Symfony\Component\HttpFoundation\Response;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -49,12 +57,20 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
-        // MenuItem::section('Blog'),
-        // MenuItem::linkToCrud('Categories', 'fa fa-tags', Category::class),
+        yield MenuItem::section('Contenu du site');
+        yield MenuItem::linkToCrud('Carousel', 'fas fa-list', Carousel::class);
+        yield MenuItem::linkToCrud('Images du Carousel', 'fas fa-list', CarouselImage::class);
+        yield MenuItem::linkToCrud('Images', 'fas fa-list', Image::class);
+        yield MenuItem::linkToCrud('Slides', 'fas fa-list', Slider::class);
+        yield MenuItem::linkToCrud('Sections', 'fas fa-list', Section::class);
+        yield MenuItem::section('Messages');
+        yield MenuItem::linkToCrud('Messages', 'fas fa-list', Message::class);
+        yield MenuItem::section('Tarfis');
+        yield MenuItem::linkToCrud('Gérer les tarfis', 'fas fa-list', PriceList::class);
         // MenuItem::linkToCrud('Blog Posts', 'fa fa-file-text', BlogPost::class),
         // MenuItem::section('Users'),
         // MenuItem::linkToCrud('Comments', 'fa fa-comment', Comment::class),
+        // yield MenuItem::linkToCrud('Carousel', 'fa fa-tags', Carousel::class);
         // MenuItem::linkToCrud('Users', 'fa fa-user', User::class),
     }
 }
