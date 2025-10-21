@@ -39,6 +39,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Message::class, mappedBy: 'User_Id')]
     private Collection $messages;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $First_Name = null;
+
     public function __construct()
     {
         $this->messages = new ArrayCollection();
@@ -78,7 +84,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        $roles[] = 'ROLE_ADMIN';
 
         return array_unique($roles);
     }
@@ -151,6 +157,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $message->setUserId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->First_Name;
+    }
+
+    public function setFirstName(?string $First_Name): static
+    {
+        $this->First_Name = $First_Name;
 
         return $this;
     }

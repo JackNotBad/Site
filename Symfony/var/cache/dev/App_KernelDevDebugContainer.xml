@@ -9,8 +9,8 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -127,15 +127,15 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</parameter>
+    <parameter key="router.cache_dir">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/serialization.php</parameter>
     <parameter key=".serializer.named_serializers" type="collection"/>
     <parameter key="cache.prefix.seed">_C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
@@ -153,11 +153,11 @@
       <parameter key="data-controller">csrf-protection</parameter>
     </parameter>
     <parameter key=".form.type_extension.csrf.token_id">submit</parameter>
-    <parameter key="validator.mapping.cache.file">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -234,13 +234,14 @@
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
     <parameter key="doctrine.orm.enable_native_lazy_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_5_horizontal_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -463,6 +464,13 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\HomeController"/>
       </call>
     </service>
+    <service id="App\Controller\SigninController" class="App\Controller\SigninController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\SigninController"/>
+      </call>
+    </service>
     <service id="App\Entity\Carousel" class="App\Entity\Carousel" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
@@ -498,6 +506,9 @@
     <service id="App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Form\SigninType" class="App\Form\SigninType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
     <service id="App\Repository\CarouselImageRepository" class="App\Repository\CarouselImageRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -566,7 +577,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.YMDzaeu"/>
+      <argument type="service" id=".service_locator.DoEdmKn"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -650,7 +661,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/http_cache</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -660,7 +671,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -1544,10 +1555,12 @@
       <argument type="service" id="form.registry"/>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
+        <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
         <argument>EasyCorp\Bundle\EasyAdminBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\SigninType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1742,7 +1755,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1761,7 +1774,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1934,7 +1947,7 @@
     <service id="asset_mapper.cached_mapped_asset_factory" class="Symfony\Component\AssetMapper\Factory\CachedMappedAssetFactory">
       <tag name="container.decorator" id="asset_mapper.mapped_asset_factory" inner="asset_mapper.cached_mapped_asset_factory.inner"/>
       <argument type="service" id="asset_mapper.cached_mapped_asset_factory.inner"/>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/asset_mapper</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/asset_mapper</argument>
       <argument>true</argument>
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
@@ -2315,7 +2328,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -3724,7 +3737,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.YMDzaeu"/>
+      <argument type="service" id=".service_locator.DoEdmKn"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3830,7 +3843,7 @@
       <argument type="service" id=".service_locator.euaNshl.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</argument>
+        <argument key="cache_dir">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -4029,10 +4042,10 @@
           <service class="Symfony\Component\Serializer\Mapping\Loader\AttributeLoader"/>
         </argument>
       </argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/serialization.php</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/serialization.php</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4259,7 +4272,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/sessions</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -4338,7 +4351,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.8awpDzK"/>
+      <argument type="service" id=".service_locator.HHXP8ZL"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4439,7 +4452,9 @@
       <argument>validators</argument>
       <argument type="service" id="form.server_params"/>
       <argument>%form.type_extension.csrf.field_attr%</argument>
-      <argument>submit</argument>
+      <argument type="collection">
+        <argument key="App\Form\SigninType">submit</argument>
+      </argument>
     </service>
     <service id="validator.builder" class="Symfony\Component\Validator\ValidatorBuilder">
       <call method="setConstraintValidatorFactory">
@@ -4479,10 +4494,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/validation.php</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -5177,7 +5192,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/profiler</argument>
+      <argument>file:C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -5257,7 +5272,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id=".virtual_request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -5877,7 +5892,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -6300,7 +6315,7 @@
       <tag name="kernel.reset" method="resetGlobals"/>
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="cache">C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/twig</argument>
+        <argument key="cache">C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -8014,7 +8029,7 @@
       <argument type="service" id="router.default"/>
       <argument type="service" id="cache.easyadmin"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminRouteGenerator"/>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</argument>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\ControllerFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\ControllerFactory">
@@ -8026,7 +8041,7 @@
       <argument type="service" id="twig"/>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Factory\AdminContextFactory" class="EasyCorp\Bundle\EasyAdminBundle\Factory\AdminContextFactory">
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</argument>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Factory\MenuFactory"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry"/>
@@ -8057,7 +8072,7 @@
       <argument type="tagged_iterator" tag="ea.crud_controller"/>
       <argument type="service" id="cache.easyadmin"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</argument>
       <argument>en</argument>
       <argument type="tagged_iterator" tag="ea.admin_route_controller"/>
     </service>
@@ -8065,7 +8080,7 @@
       <tag name="routing.loader" type="easyadmin.routes"/>
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminRouteGenerator"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</argument>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Router\UrlSigner" class="EasyCorp\Bundle\EasyAdminBundle\Router\UrlSigner">
       <argument>%env(APP_SECRET)%</argument>
@@ -8329,6 +8344,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\HomeController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SigninController" class="App\Controller\SigninController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SigninController" class="App\Controller\SigninController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\SigninController.0.App\Controller\SigninController" class="App\Controller\SigninController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SigninController" class="App\Controller\SigninController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Carousel.0.App\Entity\Carousel" class="App\Entity\Carousel" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Carousel" class="App\Entity\Carousel" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\CarouselImage.0.App\Entity\CarouselImage" class="App\Entity\CarouselImage" autowire="true" abstract="true"/>
@@ -8347,6 +8366,8 @@
     <service id=".abstract.instanceof.App\Entity\Slider" class="App\Entity\Slider" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SigninType" class="App\Form\SigninType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SigninType" class="App\Form\SigninType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CarouselImageRepository" class="App\Repository\CarouselImageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CarouselImageRepository" class="App\Repository\CarouselImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CarouselRepository" class="App\Repository\CarouselRepository" autowire="true" abstract="true"/>
@@ -10037,7 +10058,20 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ib1WIGE" method="withContext"/>
     </service>
-    <service id=".service_locator.YMDzaeu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.A84gqGd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="passwordHasher" type="service_closure" id="security.user_password_hasher"/>
+      </argument>
+    </service>
+    <service id=".service_locator.A84gqGd.App\Controller\SigninController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SigninController::index()"/>
+      <argument>App\Controller\SigninController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.A84gqGd" method="withContext"/>
+    </service>
+    <service id=".service_locator.DoEdmKn" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -10213,6 +10247,7 @@
         <argument key="App\Controller\Admin\UserCrudController::createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\UserCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\UserCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\UserCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\UserCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\UserCrudController::configureResponseParameters()"/>
+        <argument key="App\Controller\SigninController::index" type="service_closure" id=".service_locator.A84gqGd.App\Controller\SigninController::index()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\Admin\CarouselCrudController:configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\CarouselCrudController::configureCrud()"/>
@@ -10384,6 +10419,7 @@
         <argument key="App\Controller\Admin\UserCrudController:createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\UserCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\UserCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\UserCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\UserCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\UserCrudController::configureResponseParameters()"/>
+        <argument key="App\Controller\SigninController:index" type="service_closure" id=".service_locator.A84gqGd.App\Controller\SigninController::index()"/>
       </argument>
     </service>
     <service id=".service_locator.HxALDTI" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -10581,9 +10617,10 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.8awpDzK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.HHXP8ZL" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\SigninType" type="service_closure" id="App\Form\SigninType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service_closure" id="form.type.file"/>
@@ -10970,7 +11007,7 @@
       </argument>
     </service>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\DashboardControllerRegistry">
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev</argument>
       <argument type="collection">
         <argument key="App\Controller\Admin\DashboardController">8ce122e</argument>
       </argument>
@@ -11156,6 +11193,12 @@
     <service id=".service_locator.ZyP9f7K.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\SigninController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SigninController"/>
+      <argument>App\Controller\SigninController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -11376,6 +11419,7 @@
           <argument>App\Controller\Admin\SliderCrudController</argument>
           <argument>App\Controller\Admin\UserCrudController</argument>
           <argument>App\Controller\HomeController</argument>
+          <argument>App\Controller\SigninController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -12650,7 +12694,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>SmtTVohr84</argument>
       <argument>0</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -12660,7 +12704,7 @@
       <argument>6ojHiL+GRG</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12668,7 +12712,7 @@
       <argument>myVwRI1WY4</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12676,7 +12720,7 @@
       <argument>1YRxezvTTs</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12684,7 +12728,7 @@
       <argument>AWggbbutPp</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12692,14 +12736,14 @@
       <argument>+8APUcN5Zi</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>+SY5FhWRRD</argument>
       <argument>0</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/app</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -12709,7 +12753,7 @@
       <argument>+JPXh4GBJu</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12719,7 +12763,7 @@
       <argument>er5Oua-G1F</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12727,7 +12771,7 @@
       <argument>bb48iDE+n6</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12735,7 +12779,7 @@
       <argument>IKealN5mee</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12743,7 +12787,7 @@
       <argument>wnYsE3UYcl</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12751,7 +12795,7 @@
       <argument>0VehEwAuaS</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\luffy\OneDrive\Dev\Formation\DevellopeurWeb\FormationDWWM\MSPR 2\Site\Symfony\var\cache\dev/pools/system</argument>
+      <argument>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12926,7 +12970,7 @@
     <service id="EasyCorp\Bundle\EasyAdminBundle\Contracts\Orm\EntityPaginatorInterface" alias="EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YMDzaeu"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.DoEdmKn"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -12983,6 +13027,7 @@
     <service id=".service_locator.Onun9z5" alias=".service_locator.CaejQBj"/>
     <service id=".service_locator.TLLELrk" alias=".service_locator.ib1WIGE"/>
     <service id=".service_locator.iYcWkcr" alias=".service_locator.5FanY8e"/>
+    <service id=".service_locator.navQAVH" alias=".service_locator.A84gqGd"/>
     <service id=".service_locator.MPDjvt6" alias=".service_locator.OkS5_e6"/>
     <service id=".service_locator.JajWvNv" alias=".service_locator.zHhPQcF"/>
     <service id=".service_locator.9nvaCmp" alias=".service_locator.ZyP9f7K"/>

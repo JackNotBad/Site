@@ -17,6 +17,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
+
 #[AdminDashboard(routePath: '/admin', routeName: 'admin')]
 class DashboardController extends AbstractDashboardController
 {
@@ -51,22 +52,22 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Administration Canopées');
+            ->setTitle('Bonjour');
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::section('Contenu du site');
-        yield MenuItem::linkToCrud('Carousel', 'fas fa-list', Carousel::class);
-        yield MenuItem::linkToCrud('Images du Carousel', 'fas fa-list', CarouselImage::class);
-        yield MenuItem::linkToCrud('Images', 'fas fa-list', Image::class);
-        yield MenuItem::linkToCrud('Slides', 'fas fa-list', Slider::class);
-        yield MenuItem::linkToCrud('Sections', 'fas fa-list', Section::class);
-        yield MenuItem::section('Messages');
-        yield MenuItem::linkToCrud('Messages', 'fas fa-list', Message::class);
-        yield MenuItem::section('Tarfis');
-        yield MenuItem::linkToCrud('Gérer les tarfis', 'fas fa-list', PriceList::class);
+        // yield MenuItem::section('Contenu du site');
+        // yield MenuItem::linkToCrud('Carousel', 'fas fa-list', Carousel::class);
+        // yield MenuItem::linkToCrud('Images du Carousel', 'fas fa-list', CarouselImage::class);
+        // yield MenuItem::linkToCrud('Images', 'fas fa-list', Image::class);
+        // yield MenuItem::linkToCrud('Slides', 'fas fa-list', Slider::class);
+        // yield MenuItem::linkToCrud('Sections', 'fas fa-list', Section::class);
+        // yield MenuItem::section('Messages');
+        // yield MenuItem::linkToCrud('Messages', 'fas fa-list', Message::class);
+        // yield MenuItem::section('Tarfis');
+        // yield MenuItem::linkToCrud('Gérer les tarfis', 'fas fa-list', PriceList::class);
         // MenuItem::linkToCrud('Blog Posts', 'fa fa-file-text', BlogPost::class),
         // MenuItem::section('Users'),
         // MenuItem::linkToCrud('Comments', 'fa fa-comment', Comment::class),
