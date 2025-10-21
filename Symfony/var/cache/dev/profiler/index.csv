@@ -54,3 +54,15 @@ f58a66,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/app.acfa0952.css,1
 b665b9,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-color-scheme.30cb23c2.js,1761079377,2d2978,404,request
 2d2978,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-color-scheme.30cb23c2.js,1761079377,,404,request
 99a4cf,127.0.0.1,GET,https://localhost:8000/admin/user,1761079563,,200,request
+9e2bcd,127.0.0.1,GET,https://localhost:8000/signin,1761079619,,200,request
+5fe18e,127.0.0.1,GET,https://localhost:8000/admin,1761079624,,302,request
+0ddbf9,127.0.0.1,GET,https://localhost:8000/admin/user,1761079625,,200,request
+dc9957,127.0.0.1,GET,https://localhost:8000/admin/user,1761079949,,200,request
+06784d,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/app.acfa0952.css,1761079949,bbda9f,404,request
+bbda9f,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/app.acfa0952.css,1761079949,,404,request
+ec25ab,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/app.92065ad6.js,1761079950,021520,404,request
+021520,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/app.92065ad6.js,1761079950,,404,request
+47cc50,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-color-scheme.30cb23c2.js,1761079950,3acc3c,404,request
+3acc3c,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-color-scheme.30cb23c2.js,1761079950,,404,request
+0c214b,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-layout.6e9fe55d.js,1761079950,cbb969,404,request
+cbb969,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-layout.6e9fe55d.js,1761079950,,404,request
