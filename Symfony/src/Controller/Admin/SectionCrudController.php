@@ -32,10 +32,10 @@ class SectionCrudController extends AbstractCrudController
                     'choice_value' => 'id',
                 ])
                 ->setRequired(true),
-            // AssociationField::new('Image_Id', 'Image')
-            //     ->setCrudController(ImageCrudController::class)
-            //     ->setRequired(false)
-            //     ->setHelp('Choisir une image existante ou en créer une nouvelle.'),
+            AssociationField::new('Image_Id', 'Image')
+                ->setCrudController(ImageCrudController::class)
+                ->setRequired(false)
+                ->setHelp('Choisir une image existante ou en créer une nouvelle.'),
         ];
     }
 }

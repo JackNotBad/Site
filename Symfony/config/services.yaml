@@ -20,5 +20,9 @@ services:
     App\Service\ImageUploader:
         arguments:
             $targetDirectory: '%uploads_directory%'
+    App\Controller\Admin\ImageCrudController:
+        arguments:
+            $projectDir: '%kernel.project_dir%'
+        tags: ['controller.service_arguments']
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
