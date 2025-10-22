@@ -26,11 +26,7 @@ class SectionCrudController extends AbstractCrudController
             IntegerField::new('Position', 'Position'),
             DateTimeField::new('createdAt', 'Date de création'),
             TextField::new('Page_Id', 'Page'),
-            ImageField::new('Image_Id', 'Image')
-                ->setBasePath('uploads/')
-                ->setUploadDir('public/uploads')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(true),
+            ImageField::new('Image_Id', 'Image'),
         ];
     }
 }

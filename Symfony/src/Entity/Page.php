@@ -26,25 +26,25 @@ class Page
     /**
      * @var Collection<int, Message>
      */
-    #[ORM\OneToMany(targetEntity: Message::class, mappedBy: 'Page_Name')]
+    #[ORM\OneToMany(targetEntity: Message::class, mappedBy: 'Page_Id')]
     private Collection $messages;
 
     /**
      * @var Collection<int, PriceList>
      */
-    #[ORM\OneToMany(targetEntity: PriceList::class, mappedBy: 'Page_Name')]
+    #[ORM\OneToMany(targetEntity: PriceList::class, mappedBy: 'Page_Id')]
     private Collection $priceLists;
 
     /**
      * @var Collection<int, Carousel>
      */
-    #[ORM\OneToMany(targetEntity: Carousel::class, mappedBy: 'Page_Name')]
+    #[ORM\OneToMany(targetEntity: Carousel::class, mappedBy: 'Page_Id')]
     private Collection $carousels;
 
     /**
      * @var Collection<int, Section>
      */
-    #[ORM\OneToMany(targetEntity: Section::class, mappedBy: 'Page_Name')]
+    #[ORM\OneToMany(targetEntity: Section::class, mappedBy: 'Page_Id')]
     private Collection $sections;
 
     public function __construct()
@@ -96,7 +96,7 @@ class Page
     {
         if (!$this->messages->contains($message)) {
             $this->messages->add($message);
-            $message->setPageName($this);
+            $message->setPageId($this);
         }
 
         return $this;
@@ -106,8 +106,8 @@ class Page
     {
         if ($this->messages->removeElement($message)) {
             // set the owning side to null (unless already changed)
-            if ($message->getPageName() === $this) {
-                $message->setPageName(null);
+            if ($message->getPageId() === $this) {
+                $message->setPageId(null);
             }
         }
 
@@ -126,7 +126,7 @@ class Page
     {
         if (!$this->priceLists->contains($priceList)) {
             $this->priceLists->add($priceList);
-            $priceList->setPageName($this);
+            $priceList->setPageId($this);
         }
 
         return $this;
@@ -136,8 +136,8 @@ class Page
     {
         if ($this->priceLists->removeElement($priceList)) {
             // set the owning side to null (unless already changed)
-            if ($priceList->getPageName() === $this) {
-                $priceList->setPageName(null);
+            if ($priceList->getPageId() === $this) {
+                $priceList->setPageId(null);
             }
         }
 
@@ -156,7 +156,7 @@ class Page
     {
         if (!$this->carousels->contains($carousel)) {
             $this->carousels->add($carousel);
-            $carousel->setPageName($this);
+            $carousel->setPageId($this);
         }
 
         return $this;
@@ -166,8 +166,8 @@ class Page
     {
         if ($this->carousels->removeElement($carousel)) {
             // set the owning side to null (unless already changed)
-            if ($carousel->getPageName() === $this) {
-                $carousel->setPageName(null);
+            if ($carousel->getPageId() === $this) {
+                $carousel->setPageId(null);
             }
         }
 
@@ -186,7 +186,7 @@ class Page
     {
         if (!$this->sections->contains($section)) {
             $this->sections->add($section);
-            $section->setPageName($this);
+            $section->setPageId($this);
         }
 
         return $this;
@@ -196,8 +196,8 @@ class Page
     {
         if ($this->sections->removeElement($section)) {
             // set the owning side to null (unless already changed)
-            if ($section->getPageName() === $this) {
-                $section->setPageName(null);
+            if ($section->getPageId() === $this) {
+                $section->setPageId(null);
             }
         }
 

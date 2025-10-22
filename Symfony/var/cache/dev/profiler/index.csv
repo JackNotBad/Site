@@ -50,9 +50,3 @@ e63be6,127.0.0.1,GET,https://localhost:8000/admin/section,1761134827,,200,reques
 122861,127.0.0.1,GET,https://localhost:8000/admin/section,1761134876,,200,request
 c994a5,127.0.0.1,GET,https://localhost:8000/admin/section/1/edit,1761134885,9b8210,500,request
 9b8210,127.0.0.1,GET,https://localhost:8000/admin/section/1/edit,1761134885,,500,request
-43b00f,127.0.0.1,GET,https://localhost:8000/admin/section/1/edit,1761135114,,200,request
-eeec75,127.0.0.1,GET,https://localhost:8000/admin/section/1/edit,1761135180,e4d5d9,500,request
-e4d5d9,127.0.0.1,POST,https://localhost:8000/admin/section/1/edit,1761135180,,500,request
-9042c5,127.0.0.1,GET,https://localhost:8000/admin/,1761135259,,301,request
-1ec037,127.0.0.1,GET,https://localhost:8000/admin,1761135259,,302,request
-f330d6,127.0.0.1,GET,https://localhost:8000/admin/user,1761135259,,200,request

@@ -24,7 +24,7 @@ class Carousel
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'carousels')]
-    private ?Page $Page_Name = null;
+    private ?Page $Page_Id = null;
 
     /**
      * @var Collection<int, CarouselImage>
@@ -66,14 +66,14 @@ class Carousel
         return $this;
     }
 
-    public function getPageName(): ?Page
+    public function getPageId(): ?Page
     {
-        return $this->Page_Name;
+        return $this->Page_Id;
     }
 
-    public function setPageName(?Page $Page_Id): static
+    public function setPageId(?Page $Page_Id): static
     {
-        $this->Page_Name = $Page_Id;
+        $this->Page_Id = $Page_Id;
 
         return $this;
     }
