@@ -45,6 +45,16 @@ return [PHP_INT_MAX, [
             'delete' => 'admin_message_delete',
             'detail' => 'admin_message_detail',
         ],
+        'App\\Controller\\Admin\\PageCrudController' => [
+            'index' => 'admin_page_index',
+            'new' => 'admin_page_new',
+            'batchDelete' => 'admin_page_batch_delete',
+            'autocomplete' => 'admin_page_autocomplete',
+            'renderFilters' => 'admin_page_render_filters',
+            'edit' => 'admin_page_edit',
+            'delete' => 'admin_page_delete',
+            'detail' => 'admin_page_detail',
+        ],
         'App\\Controller\\Admin\\PriceListCrudController' => [
             'index' => 'admin_price_list_index',
             'new' => 'admin_price_list_new',

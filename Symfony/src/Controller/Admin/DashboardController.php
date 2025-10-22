@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Page;
 use App\Entity\Image;
 use App\Entity\Slider;
 use App\Entity\Message;
@@ -59,6 +60,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Utilisateurs', 'fa fa-home');
         yield MenuItem::section('Contenu du site');
+        yield MenuItem::linkToCrud('Page', 'fas fa-list', Page::class);
         yield MenuItem::linkToCrud('Carousel', 'fas fa-list', Carousel::class);
         yield MenuItem::linkToCrud('Images du Carousel', 'fas fa-list', CarouselImage::class);
         yield MenuItem::linkToCrud('Images', 'fas fa-list', Image::class);
