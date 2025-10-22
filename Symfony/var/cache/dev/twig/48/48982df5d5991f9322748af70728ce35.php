@@ -102,6 +102,6 @@ class __TwigTemplate_2ce8342fe79da9bd32013d5a1149c3c0 extends Template
 {% else %}
     {{ field.formattedValue }}
 {% endif %}
-", "@EasyAdmin/crud/field/collection.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\collection.html.twig");
+", "@EasyAdmin/crud/field/collection.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\collection.html.twig");
     }
 }

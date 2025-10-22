@@ -14,7 +14,7 @@ class LicenseConfig
     private $url;
     private $identifier;
     private $_usedProperties = [];
-
+    
     /**
      * The license name used for the API.
      * @default null
@@ -25,10 +25,10 @@ class LicenseConfig
     {
         $this->_usedProperties['name'] = true;
         $this->name = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * URL to the license used for the API. MUST be in the format of a URL.
      * @default null
@@ -39,10 +39,10 @@ class LicenseConfig
     {
         $this->_usedProperties['url'] = true;
         $this->url = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * An SPDX license expression for the API. The identifier field is mutually exclusive of the url field.
      * @default null
@@ -53,10 +53,10 @@ class LicenseConfig
     {
         $this->_usedProperties['identifier'] = true;
         $this->identifier = $value;
-
+    
         return $this;
     }
-
+    
     public function __construct(array $value = [])
     {
         if (array_key_exists('name', $value)) {
@@ -64,24 +64,24 @@ class LicenseConfig
             $this->name = $value['name'];
             unset($value['name']);
         }
-
+    
         if (array_key_exists('url', $value)) {
             $this->_usedProperties['url'] = true;
             $this->url = $value['url'];
             unset($value['url']);
         }
-
+    
         if (array_key_exists('identifier', $value)) {
             $this->_usedProperties['identifier'] = true;
             $this->identifier = $value['identifier'];
             unset($value['identifier']);
         }
-
+    
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
     }
-
+    
     public function toArray(): array
     {
         $output = [];
@@ -94,7 +94,7 @@ class LicenseConfig
         if (isset($this->_usedProperties['identifier'])) {
             $output['identifier'] = $this->identifier;
         }
-
+    
         return $output;
     }
 

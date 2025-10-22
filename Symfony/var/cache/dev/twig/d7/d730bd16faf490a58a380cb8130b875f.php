@@ -337,6 +337,6 @@ class __TwigTemplate_d1f99687e54adaebf1c3a2812e71c124 extends Template
         {% block wrapper_wrapper %}{% endblock wrapper_wrapper %}
     </body>
 </html>
-", "@EasyAdmin/page/login_minimal.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\page\\login_minimal.html.twig");
+", "@EasyAdmin/page/login_minimal.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\page\\login_minimal.html.twig");
     }
 }

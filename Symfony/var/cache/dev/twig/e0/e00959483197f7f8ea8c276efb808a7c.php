@@ -156,6 +156,6 @@ class __TwigTemplate_abafddb6620420e215d7dd0a6b273d59 extends Template
     </tbody>
 </table>
 </div>
-", "@WebProfiler/Profiler/bag.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\bag.html.twig");
+", "@WebProfiler/Profiler/bag.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\bag.html.twig");
     }
 }

@@ -105,8 +105,8 @@ class __TwigTemplate_691ad4cd1bc31319e994681876d5f8be extends Template
 
     This friendly message is coming from:
     <ul>
-        <li>Your controller at <code>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/templates/home/index.html.twig</code></li>
+        <li>Your controller at <code>C:/wamp64/www/Mspr2/Symfony/src/Controller/HomeController.php</code></li>
+        <li>Your template at <code>C:/wamp64/www/Mspr2/Symfony/templates/home/index.html.twig</code></li>
     </ul>
 </div>
 ";
@@ -155,8 +155,8 @@ class __TwigTemplate_691ad4cd1bc31319e994681876d5f8be extends Template
 
     This friendly message is coming from:
     <ul>
-        <li>Your controller at <code>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/Users/luffy/OneDrive/Dev/Formation/DevellopeurWeb/FormationDWWM/MSPR 2/Site/Symfony/templates/home/index.html.twig</code></li>
+        <li>Your controller at <code>C:/wamp64/www/Mspr2/Symfony/src/Controller/HomeController.php</code></li>
+        <li>Your template at <code>C:/wamp64/www/Mspr2/Symfony/templates/home/index.html.twig</code></li>
     </ul>
 </div>
 {% endblock %}

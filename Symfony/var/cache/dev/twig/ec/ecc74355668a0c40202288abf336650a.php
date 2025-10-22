@@ -452,6 +452,6 @@ class __TwigTemplate_2b39130a5ce5a35f1149ab781b59679a extends Template
 </article>
 </body>
 </html>
-", "@EasyAdmin/welcome.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\welcome.html.twig");
+", "@EasyAdmin/welcome.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\welcome.html.twig");
     }
 }

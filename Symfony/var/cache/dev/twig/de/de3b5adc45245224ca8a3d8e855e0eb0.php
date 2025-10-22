@@ -108,6 +108,6 @@ class __TwigTemplate_df33bb569eb3ad092e063ef0a8e4a9f5 extends Template
 {% if field.customOptions.get('showValue') %}
     {{ field.formattedValue }}
 {% endif %}
-", "@EasyAdmin/crud/field/color.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\color.html.twig");
+", "@EasyAdmin/crud/field/color.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\color.html.twig");
     }
 }

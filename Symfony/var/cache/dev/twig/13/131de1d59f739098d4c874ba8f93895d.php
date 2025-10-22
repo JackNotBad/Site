@@ -224,6 +224,6 @@ class __TwigTemplate_673a54f9c3b2c3dc9b250e6b0475c473 extends Template
 {% block content_title %}{{ block('page_title') }}{% endblock %}
 
 {% block main %}{{ block('page_content') }}{% endblock %}
-", "@EasyAdmin/page/content.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\page\\content.html.twig");
+", "@EasyAdmin/page/content.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\page\\content.html.twig");
     }
 }

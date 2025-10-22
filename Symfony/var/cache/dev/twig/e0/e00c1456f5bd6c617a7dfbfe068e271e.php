@@ -300,6 +300,6 @@ class __TwigTemplate_deea3371109a207a189cd268aa8e25ef extends Template
 
 </body>
 </html>
-", "@ApiPlatform/Graphiql/index.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\api-platform\\symfony\\Bundle\\Resources\\views\\Graphiql\\index.html.twig");
+", "@ApiPlatform/Graphiql/index.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\api-platform\\symfony\\Bundle\\Resources\\views\\Graphiql\\index.html.twig");
     }
 }

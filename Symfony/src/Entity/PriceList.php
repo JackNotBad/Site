@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\PriceListRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use App\Repository\PriceListRepository;
 
+#[ApiResource]
 #[ORM\Entity(repositoryClass: PriceListRepository::class)]
 class PriceList
 {

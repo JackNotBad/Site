@@ -525,6 +525,6 @@ class __TwigTemplate_1ddfb3f5a2aa8048670a55390372ef88 extends Template
         {{ form(new_form) }}
     {% endblock new_form %}
 {% endblock %}
-", "@EasyAdmin/crud/new.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\new.html.twig");
+", "@EasyAdmin/crud/new.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\new.html.twig");
     }
 }

@@ -1056,6 +1056,6 @@ $context["call"], "return", [], "any", false, false, false, 313) === false)) {
         </menu>
     </dialog>
 {% endblock %}
-", "@WebProfiler/Collector/workflow.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\workflow.html.twig");
+", "@WebProfiler/Collector/workflow.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\workflow.html.twig");
     }
 }

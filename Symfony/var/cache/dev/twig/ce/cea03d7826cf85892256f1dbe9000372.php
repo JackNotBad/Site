@@ -731,6 +731,6 @@ class __TwigTemplate_17b2392762cec38ba1530ae633840f01 extends Template
     });
 })();
 </script>
-", "@WebProfiler/Profiler/settings.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\settings.html.twig");
+", "@WebProfiler/Profiler/settings.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\settings.html.twig");
     }
 }

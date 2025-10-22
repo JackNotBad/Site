@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\SectionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use App\Repository\SectionRepository;
 
+#[ApiResource]
 #[ORM\Entity(repositoryClass: SectionRepository::class)]
 class Section
 {

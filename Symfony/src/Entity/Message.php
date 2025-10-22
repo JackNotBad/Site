@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\MessageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use App\Repository\MessageRepository;
 
+#[ApiResource]
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
 class Message
 {

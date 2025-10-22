@@ -130,6 +130,6 @@ class __TwigTemplate_b1a280262d355ca6ff85248352fcf446 extends Template
         {{ component('ea:Button', { type: 'button', isInvisible: true, icon: 'internal:xmark', class: 'btn-close', 'data-bs-dismiss': 'alert', 'aria-label': 'Close' }) }}
     {% endif %}
 </div>
-", "@EasyAdmin/components/Alert.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\Alert.html.twig");
+", "@EasyAdmin/components/Alert.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\Alert.html.twig");
     }
 }

@@ -90,6 +90,6 @@ class __TwigTemplate_f6ac898bf813544fb31d984ec71ab0c5 extends Template
 {# @var field \\EasyCorp\\Bundle\\EasyAdminBundle\\Dto\\FieldDto #}
 {# @var entity \\EasyCorp\\Bundle\\EasyAdminBundle\\Dto\\EntityDto #}
 <a href=\"mailto:{{ field.value }}\">{{ field.formattedValue }}</a>
-", "@EasyAdmin/crud/field/email.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\email.html.twig");
+", "@EasyAdmin/crud/field/email.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\email.html.twig");
     }
 }

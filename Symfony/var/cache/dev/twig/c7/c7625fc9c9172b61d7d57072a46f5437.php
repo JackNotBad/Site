@@ -119,6 +119,6 @@ class __TwigTemplate_858894a96b89279e12e9b987f307dd5e extends Template
 {% if field.customOptions.get('showName') %}
     {{ field.formattedValue.name }}
 {% endif %}
-", "@EasyAdmin/crud/field/currency.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\currency.html.twig");
+", "@EasyAdmin/crud/field/currency.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\currency.html.twig");
     }
 }

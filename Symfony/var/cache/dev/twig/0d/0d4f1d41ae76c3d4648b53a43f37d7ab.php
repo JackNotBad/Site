@@ -572,6 +572,6 @@ class __TwigTemplate_a54435f884dcd8d52329cc8c04dc5fb5 extends Template
         </a>
     {% endif %}
 {% endmacro %}
-", "@EasyAdmin/menu.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\menu.html.twig");
+", "@EasyAdmin/menu.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\menu.html.twig");
     }
 }

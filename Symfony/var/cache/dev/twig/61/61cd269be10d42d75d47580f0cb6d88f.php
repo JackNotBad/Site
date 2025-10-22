@@ -96,6 +96,6 @@ class __TwigTemplate_cb9b9c247ae34e00832bc71d79ce29cf extends Template
 <span class=\"badge badge-danger\" title=\"{{ 'label.inaccessible.explanation'|trans }}\">
     {{ 'label.inaccessible'|trans }}
 </span>
-", "@EasyAdmin/label/inaccessible.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\label\\inaccessible.html.twig");
+", "@EasyAdmin/label/inaccessible.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\label\\inaccessible.html.twig");
     }
 }

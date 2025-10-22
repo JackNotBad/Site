@@ -92,6 +92,6 @@ class __TwigTemplate_501c3c9366a741e7b4c9e19d1b2a5ff2 extends Template
 {# @var field \\EasyCorp\\Bundle\\EasyAdminBundle\\Dto\\FieldDto #}
 {# @var entity \\EasyCorp\\Bundle\\EasyAdminBundle\\Dto\\EntityDto #}
 <img class=\"image-avatar\" height=\"{{ field.customOptions.get('height') }}\" width=\"{{ field.customOptions.get('height') }}\" src=\"{{ field.formattedValue }}\">
-", "@EasyAdmin/crud/field/avatar.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\avatar.html.twig");
+", "@EasyAdmin/crud/field/avatar.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\field\\avatar.html.twig");
     }
 }

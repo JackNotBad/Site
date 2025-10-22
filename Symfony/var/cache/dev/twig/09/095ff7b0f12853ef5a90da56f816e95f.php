@@ -2290,6 +2290,6 @@ class __TwigTemplate_936feb2fb6bbc5de8b069d755c4b4c17 extends Template
         </dd>
     </div>
 {% endmacro %}
-", "@EasyAdmin/crud/detail.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\detail.html.twig");
+", "@EasyAdmin/crud/detail.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\detail.html.twig");
     }
 }

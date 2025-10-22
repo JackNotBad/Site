@@ -13,7 +13,7 @@ class TagsConfig
     private $name;
     private $description;
     private $_usedProperties = [];
-
+    
     /**
      * @default null
      * @param ParamConfigurator|mixed $value
@@ -23,10 +23,10 @@ class TagsConfig
     {
         $this->_usedProperties['name'] = true;
         $this->name = $value;
-
+    
         return $this;
     }
-
+    
     /**
      * @default null
      * @param ParamConfigurator|mixed $value
@@ -36,10 +36,10 @@ class TagsConfig
     {
         $this->_usedProperties['description'] = true;
         $this->description = $value;
-
+    
         return $this;
     }
-
+    
     public function __construct(array $value = [])
     {
         if (array_key_exists('name', $value)) {
@@ -47,18 +47,18 @@ class TagsConfig
             $this->name = $value['name'];
             unset($value['name']);
         }
-
+    
         if (array_key_exists('description', $value)) {
             $this->_usedProperties['description'] = true;
             $this->description = $value['description'];
             unset($value['description']);
         }
-
+    
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
     }
-
+    
     public function toArray(): array
     {
         $output = [];
@@ -68,7 +68,7 @@ class TagsConfig
         if (isset($this->_usedProperties['description'])) {
             $output['description'] = $this->description;
         }
-
+    
         return $output;
     }
 

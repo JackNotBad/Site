@@ -563,6 +563,6 @@ class __TwigTemplate_493fa076898a8a5253265086b0a0c87e extends Template
         {{ include('@EasyAdmin/crud/includes/_delete_form.html.twig', {entity_id: entity.primaryKeyValue}, with_context: false) }}
     {% endblock delete_form %}
 {% endblock %}
-", "@EasyAdmin/crud/edit.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\edit.html.twig");
+", "@EasyAdmin/crud/edit.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\crud\\edit.html.twig");
     }
 }

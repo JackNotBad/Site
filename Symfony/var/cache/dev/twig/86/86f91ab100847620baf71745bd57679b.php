@@ -147,6 +147,6 @@ unset($context[$key]);
 <turbo-stream action=\"update\" targets=\"{{ target }}\"{% if morph %} method=\"morph\"{% endif %} {{- attributes }}>
     <template>{% block content %}{% endblock %}</template>
 </turbo-stream>
-", "@Turbo/components/Stream/Update.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\symfony\\ux-turbo\\templates\\components\\Stream\\Update.html.twig");
+", "@Turbo/components/Stream/Update.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\symfony\\ux-turbo\\templates\\components\\Stream\\Update.html.twig");
     }
 }
