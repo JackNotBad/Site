@@ -66,3 +66,4 @@ ec25ab,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/app.92065ad6.js,17
 3acc3c,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-color-scheme.30cb23c2.js,1761079950,,404,request
 0c214b,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-layout.6e9fe55d.js,1761079950,cbb969,404,request
 cbb969,127.0.0.1,GET,https://localhost:8000/bundles/easyadmin/page-layout.6e9fe55d.js,1761079950,,404,request
+394cbb,127.0.0.1,GET,https://localhost:8000/admin/user,1761080086,,200,request
