@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Page;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\SectionRepository;
@@ -30,7 +31,8 @@ class Section
     #[ORM\ManyToOne(inversedBy: 'sections')]
     private ?Page $Page_Id = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(targetEntity: Image::class, cascade: ['persist'])]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Image $Image_Id = null;
 
     public function __construct()

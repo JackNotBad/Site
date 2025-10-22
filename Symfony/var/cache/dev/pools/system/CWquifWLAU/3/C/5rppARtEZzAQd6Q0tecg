@@ -10,13 +10,9 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
             'properties' => [
                 [
                     'id',
-                    'Url',
-                    'Alt',
-                    'createdAt',
-                    'carouselImage',
-                    'slider',
                     'url',
                     'alt',
+                    'createdAt',
                 ],
             ],
         ],

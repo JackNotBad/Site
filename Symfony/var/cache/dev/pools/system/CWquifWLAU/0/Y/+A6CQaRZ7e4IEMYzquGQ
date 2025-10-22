@@ -24,7 +24,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
                 true,
             ],
             'writable' => [
-                true,
+                false,
             ],
             'readableLink' => [
                 null,
@@ -76,6 +76,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
             ],
             'schema' => [
                 [
+                    'readOnly' => true,
                     'type' => 'string',
                     'format' => 'date-time',
                 ],
@@ -104,7 +105,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
         ],
         'Symfony\\Component\\TypeInfo\\Type\\ObjectType' => [
             'className' => [
-                1 => 'DateTimeImmutable',
+                1 => 'DateTime',
             ],
         ],
     ],

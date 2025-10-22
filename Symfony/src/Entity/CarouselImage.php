@@ -86,26 +86,4 @@ class CarouselImage
     {
         return $this->Image_Id;
     }
-
-    public function addImageId(Image $imageId): static
-    {
-        if (!$this->Image_Id->contains($imageId)) {
-            $this->Image_Id->add($imageId);
-            $imageId->setCarouselImage($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImageId(Image $imageId): static
-    {
-        if ($this->Image_Id->removeElement($imageId)) {
-            // set the owning side to null (unless already changed)
-            if ($imageId->getCarouselImage() === $this) {
-                $imageId->setCarouselImage(null);
-            }
-        }
-
-        return $this;
-    }
 }

@@ -16,82 +16,41 @@ class Image
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $Url = null;
+    private ?string $url = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $Alt = null;
+    private ?string $alt = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $createdAt = null;
+    #[ORM\Column(type: "datetime")]
+    private \DateTimeInterface $createdAt;
 
-    #[ORM\ManyToOne(inversedBy: 'Image_Id')]
-    private ?CarouselImage $carouselImage = null;
-
-    #[ORM\ManyToOne(inversedBy: 'Image_Id')]
-    private ?Slider $slider = null;
-
-    public function getId(): ?int
+    public function __construct()
     {
-        return $this->id;
+        $this->createdAt = new \DateTimeImmutable();
     }
 
-    public function getUrl(): ?string
-    {
-        return $this->Url;
+    public function getId(): ?int 
+    { 
+        return $this->id; 
     }
-
-    public function setUrl(string $Url): static
-    {
-        $this->Url = $Url;
-
-        return $this;
+    public function getUrl(): ?string 
+    { 
+        return $this->url; 
     }
-
-    public function getAlt(): ?string
-    {
-        return $this->Alt;
+    public function setUrl(string $url): self 
+    { 
+        $this->url = $url; return $this; 
     }
-
-    public function setAlt(?string $Alt): static
-    {
-        $this->Alt = $Alt;
-
-        return $this;
+    public function getAlt(): ?string 
+    { 
+        return $this->alt; 
     }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->createdAt;
+    public function setAlt(?string $alt): self 
+    { 
+        $this->alt = $alt; return $this; 
     }
-
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getCarouselImage(): ?CarouselImage
-    {
-        return $this->carouselImage;
-    }
-
-    public function setCarouselImage(?CarouselImage $carouselImage): static
-    {
-        $this->carouselImage = $carouselImage;
-
-        return $this;
-    }
-
-    public function getSlider(): ?Slider
-    {
-        return $this->slider;
-    }
-
-    public function setSlider(?Slider $slider): static
-    {
-        $this->slider = $slider;
-
-        return $this;
+    public function getCreatedAt(): \DateTimeInterface 
+    { 
+        return $this->createdAt; 
     }
 }

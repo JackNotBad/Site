@@ -2,6 +2,10 @@
 
 namespace App\Entity;
 
+use App\Entity\Message;
+use App\Entity\Section;
+use App\Entity\Carousel;
+use App\Entity\PriceList;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PageRepository;
 use ApiPlatform\Metadata\ApiResource;

@@ -3,12 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Page;
-use App\Entity\Image;
 use App\Entity\Section;
-use App\Repository\PageRepository;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -36,16 +32,10 @@ class SectionCrudController extends AbstractCrudController
                     'choice_value' => 'id',
                 ])
                 ->setRequired(true),
-            // ImageField::new('Image_Id', 'Image')
-            //         ->setBasePath('uploads/')
-            //         ->setUploadDir('public/uploads')
-            //         ->setUploadedFileNamePattern('[randomhash].[extension]')
-            //         ->setRequired(true)
-            //         ->setFormTypeOptions([
-            //             'class' => Image::class,
-            //             'choice_label' => 'Alt',
-            //             'choice_value' => 'id',
-            //     ]),
+            // AssociationField::new('Image_Id', 'Image')
+            //     ->setCrudController(ImageCrudController::class)
+            //     ->setRequired(false)
+            //     ->setHelp('Choisir une image existante ou en créer une nouvelle.'),
         ];
     }
 }
