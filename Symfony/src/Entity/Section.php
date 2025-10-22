@@ -33,6 +33,11 @@ class Section
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     private ?Image $Image_Id = null;
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Paris'));
+    }
+
     public function getId(): ?int
     {
         return $this->id;
