@@ -225,6 +225,6 @@ $context["name"], "profiler_markup_version" =>                 // line 10
         <i class=\"sf-toolbar-icon-closed\" title=\"Open Toolbar\">{{ source('@WebProfiler/Icon/symfony.svg') }}</i>
     </button>
 </div>
-", "@WebProfiler/Profiler/toolbar.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar.html.twig");
+", "@WebProfiler/Profiler/toolbar.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar.html.twig");
     }
 }

@@ -1086,6 +1086,6 @@ class __TwigTemplate_d360347ef393d999741cea731aae8591 extends Template
         {% endfor %}
     </div>
 {% endblock %}
-", "@TwigComponent/Collector/twig_component.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\vendor\\symfony\\ux-twig-component\\templates\\Collector\\twig_component.html.twig");
+", "@TwigComponent/Collector/twig_component.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\symfony\\ux-twig-component\\templates\\Collector\\twig_component.html.twig");
     }
 }

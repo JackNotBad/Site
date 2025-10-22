@@ -240,6 +240,6 @@ class __TwigTemplate_cb294492a2246f412a1e4ff3b4dc811e extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\templates\\base.html.twig");
+", "base.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\templates\\base.html.twig");
     }
 }

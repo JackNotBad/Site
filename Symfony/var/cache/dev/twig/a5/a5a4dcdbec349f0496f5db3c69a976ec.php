@@ -160,6 +160,6 @@ class __TwigTemplate_691ad4cd1bc31319e994681876d5f8be extends Template
     </ul>
 </div>
 {% endblock %}
-", "home/index.html.twig", "C:\\Users\\luffy\\OneDrive\\Dev\\Formation\\DevellopeurWeb\\FormationDWWM\\MSPR 2\\Site\\Symfony\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\templates\\home\\index.html.twig");
     }
 }
