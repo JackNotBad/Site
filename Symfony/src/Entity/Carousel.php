@@ -2,40 +2,32 @@
 
 namespace App\Entity;
 
-use App\Entity\CarouselImage;
+use App\Repository\CarouselRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
-use App\Repository\CarouselRepository;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Collections\ArrayCollection;
 
 #[ApiResource]
 #[ORM\Entity(repositoryClass: CarouselRepository::class)]
 class Carousel
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $Position = null;
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
+    
+    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'carousels')]
+    #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
+    private ?Page $page = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $createdAt = null;
-
-    #[ORM\ManyToOne(inversedBy: 'carousels')]
-    private ?Page $Page_Id = null;
-
-    /**
-     * @var Collection<int, CarouselImage>
-     */
-    #[ORM\OneToMany(targetEntity: CarouselImage::class, mappedBy: 'Carousel_Id', orphanRemoval: true)]
-    private Collection $carouselImages;
+    #[ORM\OneToMany(mappedBy: 'carousel', targetEntity: CarouselImage::class, cascade: ['persist','remove'], orphanRemoval: true)]
+    private Collection $images;
 
     public function __construct()
     {
-        $this->carouselImages = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -43,69 +35,50 @@ class Carousel
         return $this->id;
     }
 
-    public function getPosition(): ?int
+    public function getTitle(): ?string
     {
-        return $this->Position;
+        return $this->title;
     }
 
-    public function setPosition(int $Position): static
+    public function setTitle(string $title): self
     {
-        $this->Position = $Position;
-
+        $this->title = $title;
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getPage(): ?Page
     {
-        return $this->createdAt;
+        return $this->page;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    public function setPage(?Page $page): self
     {
-        $this->createdAt = $createdAt;
-
+        $this->page = $page;
         return $this;
     }
 
-    public function getPageId(): ?Page
+    /** @return Collection|CarouselImage[] */
+    public function getImages(): Collection
     {
-        return $this->Page_Id;
+        return $this->images;
     }
 
-    public function setPageId(?Page $Page_Id): static
+    public function addImage(CarouselImage $ci): self
     {
-        $this->Page_Id = $Page_Id;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, CarouselImage>
-     */
-    public function getCarouselImages(): Collection
-    {
-        return $this->carouselImages;
-    }
-
-    public function addCarouselImage(CarouselImage $carouselImage): static
-    {
-        if (!$this->carouselImages->contains($carouselImage)) {
-            $this->carouselImages->add($carouselImage);
-            $carouselImage->setCarouselId($this);
+        if (!$this->images->contains($ci)) {
+            $this->images[] = $ci;
+            $ci->setCarousel($this);
         }
-
         return $this;
     }
 
-    public function removeCarouselImage(CarouselImage $carouselImage): static
+    public function removeImage(CarouselImage $ci): self
     {
-        if ($this->carouselImages->removeElement($carouselImage)) {
-            // set the owning side to null (unless already changed)
-            if ($carouselImage->getCarouselId() === $this) {
-                $carouselImage->setCarouselId(null);
+        if ($this->images->removeElement($ci)) {
+            if ($ci->getCarousel() === $this) {
+                $ci->setCarousel(null);
             }
         }
-
         return $this;
     }
 }

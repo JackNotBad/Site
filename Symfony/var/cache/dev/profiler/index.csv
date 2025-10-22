@@ -168,3 +168,5 @@ b898c4,127.0.0.1,GET,https://localhost:8000/admin/section,1761154277,,200,reques
 51d6e5,127.0.0.1,GET,https://localhost:8000/admin/carousel-image,1761154279,,200,request
 c064ea,127.0.0.1,GET,https://localhost:8000/admin/carousel,1761154280,,200,request
 3e25c5,127.0.0.1,GET,https://localhost:8000/admin/page,1761154284,,200,request
+04a7b0,127.0.0.1,GET,https://localhost:8000/admin/carousel,1761160058,,200,request
+8788df,127.0.0.1,GET,https://localhost:8000/admin/page,1761160064,,200,request

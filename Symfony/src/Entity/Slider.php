@@ -2,36 +2,32 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\SliderRepository;
-use ApiPlatform\Metadata\ApiResource;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ApiResource]
 #[ORM\Entity(repositoryClass: SliderRepository::class)]
 class Slider
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $Position = null;
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $createdAt = null;
+    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'sliders')]
+    #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
+    private ?Page $page = null;
 
-    /**
-     * @var Collection<int, Image>
-     */
-    #[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'slider')]
-    private Collection $Image_Id;
+    #[ORM\OneToMany(mappedBy: 'slider', targetEntity: SliderImage::class, cascade: ['persist','remove'], orphanRemoval: true)]
+    private Collection $images;
 
     public function __construct()
     {
-        $this->Image_Id = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -39,57 +35,50 @@ class Slider
         return $this->id;
     }
 
-    public function getPosition(): ?int
+    public function getTitle(): ?string
     {
-        return $this->Position;
+        return $this->title;
     }
 
-    public function setPosition(int $Position): static
+    public function setTitle(string $title): self
     {
-        $this->Position = $Position;
-
+        $this->title = $title;
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getPage(): ?Page
     {
-        return $this->createdAt;
+        return $this->page;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    public function setPage(?Page $page): self
     {
-        $this->createdAt = $createdAt;
-
+        $this->page = $page;
         return $this;
     }
 
-    /**
-     * @return Collection<int, Image>
-     */
-    public function getImageId(): Collection
+    /** @return Collection|SliderImage[] */
+    public function getImages(): Collection
     {
-        return $this->Image_Id;
+        return $this->images;
     }
 
-    public function addImageId(Image $imageId): static
+    public function addImage(SliderImage $si): self
     {
-        if (!$this->Image_Id->contains($imageId)) {
-            $this->Image_Id->add($imageId);
-            $imageId->setSlider($this);
+        if (!$this->images->contains($si)) {
+            $this->images[] = $si;
+            $si->setSlider($this);
         }
-
         return $this;
     }
 
-    public function removeImageId(Image $imageId): static
+    public function removeImage(SliderImage $si): self
     {
-        if ($this->Image_Id->removeElement($imageId)) {
-            // set the owning side to null (unless already changed)
-            if ($imageId->getSlider() === $this) {
-                $imageId->setSlider(null);
+        if ($this->images->removeElement($si)) {
+            if ($si->getSlider() === $this) {
+                $si->setSlider(null);
             }
         }
-
         return $this;
     }
 }

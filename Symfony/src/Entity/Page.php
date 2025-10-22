@@ -28,6 +28,18 @@ class Page
     private ?string $Name = null;
 
     /**
+     * @var Collection<int, Carousel>
+     */
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: Carousel::class, cascade: ['persist','remove'], orphanRemoval: true)]
+    private Collection $carousels;
+
+    /**
+     * @var Collection<int, Slider>
+     */
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: Slider::class, cascade: ['persist','remove'], orphanRemoval: true)]
+    private Collection $sliders;
+
+    /**
      * @var Collection<int, Message>
      */
     #[ORM\OneToMany(targetEntity: Message::class, mappedBy: 'Page_Id')]
@@ -40,12 +52,6 @@ class Page
     private Collection $priceLists;
 
     /**
-     * @var Collection<int, Carousel>
-     */
-    #[ORM\OneToMany(targetEntity: Carousel::class, mappedBy: 'Page_Id')]
-    private Collection $carousels;
-
-    /**
      * @var Collection<int, Section>
      */
     #[ORM\OneToMany(targetEntity: Section::class, mappedBy: 'Page_Id')]
@@ -55,8 +61,9 @@ class Page
     {
         $this->messages = new ArrayCollection();
         $this->priceLists = new ArrayCollection();
-        $this->carousels = new ArrayCollection();
         $this->sections = new ArrayCollection();
+        $this->carousels = new ArrayCollection();
+        $this->sliders = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -148,33 +155,53 @@ class Page
         return $this;
     }
 
-    /**
-     * @return Collection<int, Carousel>
-     */
+    /** @return Collection|Carousel[] */
     public function getCarousels(): Collection
     {
         return $this->carousels;
     }
 
-    public function addCarousel(Carousel $carousel): static
+    public function addCarousel(Carousel $c): self
     {
-        if (!$this->carousels->contains($carousel)) {
-            $this->carousels->add($carousel);
-            $carousel->setPageId($this);
+        if (!$this->carousels->contains($c)) {
+            $this->carousels[] = $c;
+            $c->setPage($this);
         }
-
         return $this;
     }
 
-    public function removeCarousel(Carousel $carousel): static
+    public function removeCarousel(Carousel $c): self
     {
-        if ($this->carousels->removeElement($carousel)) {
-            // set the owning side to null (unless already changed)
-            if ($carousel->getPageId() === $this) {
-                $carousel->setPageId(null);
+        if ($this->carousels->removeElement($c)) {
+            if ($c->getPage() === $this) {
+                $c->setPage(null);
             }
         }
+        return $this;
+    }
 
+    /** @return Collection|Slider[] */
+    public function getSliders(): Collection
+    {
+        return $this->sliders;
+    }
+
+    public function addSlider(Slider $s): self
+    {
+        if (!$this->sliders->contains($s)) {
+            $this->sliders[] = $s;
+            $s->setPage($this);
+        }
+        return $this;
+    }
+
+    public function removeSlider(Slider $s): self
+    {
+        if ($this->sliders->removeElement($s)) {
+            if ($s->getPage() === $this) {
+                $s->setPage(null);
+            }
+        }
         return $this;
     }
 

@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CarouselImageRepository;
+use App\Repository\SliderImageRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 
 #[ApiResource]
-#[ORM\Entity(repositoryClass: CarouselImageRepository::class)]
-class CarouselImage
+#[ORM\Entity(repositoryClass: SliderImageRepository::class)]
+class SliderImage
 {
     #[ORM\Id, ORM\GeneratedValue, ORM\Column]
     private ?int $id = null;
@@ -16,11 +16,11 @@ class CarouselImage
     #[ORM\Column(type: 'integer')]
     private int $position = 0;
 
-    #[ORM\ManyToOne(targetEntity: Carousel::class, inversedBy: 'images')]
+    #[ORM\ManyToOne(targetEntity: Slider::class, inversedBy: 'images')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
-    private ?Carousel $carousel = null;
+    private ?Slider $slider = null;
 
-    #[ORM\ManyToOne(targetEntity: Image::class, inversedBy: 'carouselImages')]
+    #[ORM\ManyToOne(targetEntity: Image::class, inversedBy: 'sliderImages')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'RESTRICT')]
     private ?Image $image = null;
 
@@ -40,14 +40,14 @@ class CarouselImage
         return $this;
     }
 
-    public function getCarousel(): ?Carousel
+    public function getSlider(): ?Slider
     {
-        return $this->carousel;
+        return $this->slider;
     }
 
-    public function setCarousel(?Carousel $carousel): self
+    public function setSlider(?Slider $slider): self
     {
-        $this->carousel = $carousel;
+        $this->slider = $slider;
         return $this;
     }
 
