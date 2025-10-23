@@ -116,7 +116,6 @@ class Page
     public function removeMessage(Message $message): static
     {
         if ($this->messages->removeElement($message)) {
-            // set the owning side to null (unless already changed)
             if ($message->getPageId() === $this) {
                 $message->setPageId(null);
             }
@@ -146,7 +145,6 @@ class Page
     public function removePriceList(PriceList $priceList): static
     {
         if ($this->priceLists->removeElement($priceList)) {
-            // set the owning side to null (unless already changed)
             if ($priceList->getPageId() === $this) {
                 $priceList->setPageId(null);
             }
@@ -226,12 +224,28 @@ class Page
     public function removeSection(Section $section): static
     {
         if ($this->sections->removeElement($section)) {
-            // set the owning side to null (unless already changed)
             if ($section->getPageId() === $this) {
                 $section->setPageId(null);
             }
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+
+        $title = method_exists($this, 'getTitle') ? $this->getTitle() : null;
+        if ($title !== null && $title !== '') {
+            return (string) $title;
+        }
+
+        $Name = method_exists($this, 'getName') ? $this->getName() : null;
+        if ($Name !== null && $Name !== '') {
+            return (string) $Name;
+        }
+
+        $id = method_exists($this, 'getId') ? $this->getId() : null;
+        return $id !== null ? (string) $id : 'Page_Id';
     }
 }

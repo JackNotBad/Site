@@ -31,7 +31,11 @@ class SectionCrudController extends AbstractCrudController
                     'choice_label' => 'Name',
                     'choice_value' => 'id',
                 ])
-                ->setRequired(true),
+                ->setRequired(true)
+                ->formatValue(function ($value, $entity) {
+                    $page = $entity->getPageId();
+                    return $page ? $page->getName() : '';
+                }),
             AssociationField::new('Image_Id', 'Image')
                 ->setCrudController(ImageCrudController::class)
                 ->setRequired(false)

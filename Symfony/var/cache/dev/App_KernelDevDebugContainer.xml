@@ -446,6 +446,7 @@
       <parameter>App\Entity\PriceList</parameter>
       <parameter>App\Entity\Section</parameter>
       <parameter>App\Entity\Slider</parameter>
+      <parameter>App\Entity\SliderImage</parameter>
       <parameter>App\Entity\User</parameter>
     </parameter>
     <parameter key="api_platform.oauth.enabled">false</parameter>
@@ -681,6 +682,14 @@
         <argument type="service" id=".service_locator.OkS5_e6.App\Controller\Admin\SliderCrudController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\SliderImageCrudController" class="App\Controller\Admin\SliderImageCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="ea.crud_controller"/>
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.OkS5_e6.App\Controller\Admin\SliderImageCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="ea.crud_controller"/>
       <tag name="controller.service_arguments"/>
@@ -751,6 +760,12 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Entity\SliderImage" class="App\Entity\SliderImage" autowire="true" autoconfigure="true">
+      <tag name="api_platform.resource"/>
+      <tag name="container.excluded" source="by #[ApiResource] attribute"/>
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true">
       <tag name="api_platform.resource"/>
       <tag name="container.excluded" source="by #[ApiResource] attribute"/>
@@ -788,6 +803,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\SliderImageRepository" class="App\Repository\SliderImageRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\SliderRepository" class="App\Repository\SliderRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -799,6 +818,13 @@
     <service id="App\Service\ImageUploader" class="App\Service\ImageUploader" autowire="true" autoconfigure="true">
       <argument>C:\wamp64\www\Mspr2\Symfony/public/uploads</argument>
       <argument type="service" id="slugger"/>
+    </service>
+    <service id="App\Validator\Constraints\ImagesCount" class="App\Validator\Constraints\ImagesCount" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a PHP attribute"/>
+      <tag name="container.excluded" source="because it's a validation constraint"/>
+    </service>
+    <service id="App\Validator\Constraints\ImagesCountValidator" class="App\Validator\Constraints\ImagesCountValidator" autowire="true" autoconfigure="true">
+      <tag name="validator.constraint_validator"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
@@ -831,7 +857,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.fa7y.Iw"/>
+      <argument type="service" id=".service_locator.gBAl1eH"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3124,6 +3150,7 @@
     <service id="translation.extractor.visitor.constraint" class="Symfony\Component\Translation\Extractor\Visitor\ConstraintVisitor">
       <tag name="translation.extractor.visitor"/>
       <argument type="collection">
+        <argument>ImagesCount</argument>
         <argument>All</argument>
         <argument>AtLeastOneOf</argument>
         <argument>Bic</argument>
@@ -4091,7 +4118,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.fa7y.Iw"/>
+      <argument type="service" id=".service_locator.gBAl1eH"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4884,7 +4911,7 @@
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
-      <argument type="service" id=".service_locator.HxALDTI"/>
+      <argument type="service" id=".service_locator.dgARDkS"/>
     </service>
     <service id="Symfony\Component\Validator\Constraints\AllValidator" class="Symfony\Component\Validator\Constraints\AllValidator" abstract="true">
       <tag name="container.excluded"/>
@@ -6100,7 +6127,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.CIux3Jc"/>
+      <argument type="service" id=".service_locator.XcXRtcZ"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -10223,6 +10250,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\SliderCrudController" class="App\Controller\Admin\SliderCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\SliderCrudController" class="App\Controller\Admin\SliderCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\SliderCrudController" class="App\Controller\Admin\SliderCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\SliderImageCrudController" class="App\Controller\Admin\SliderImageCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\SliderImageCrudController" class="App\Controller\Admin\SliderImageCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\SliderImageCrudController" class="App\Controller\Admin\SliderImageCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\SliderImageCrudController" class="App\Controller\Admin\SliderImageCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\UserCrudController" class="App\Controller\Admin\UserCrudController" autowire="true" abstract="true"/>
@@ -10251,6 +10282,8 @@
     <service id=".abstract.instanceof.App\Entity\Section" class="App\Entity\Section" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Slider.0.App\Entity\Slider" class="App\Entity\Slider" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Slider" class="App\Entity\Slider" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\SliderImage.0.App\Entity\SliderImage" class="App\Entity\SliderImage" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\SliderImage" class="App\Entity\SliderImage" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SigninType" class="App\Form\SigninType" autowire="true" abstract="true"/>
@@ -10269,10 +10302,17 @@
     <service id=".abstract.instanceof.App\Repository\PriceListRepository" class="App\Repository\PriceListRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SectionRepository" class="App\Repository\SectionRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SectionRepository" class="App\Repository\SectionRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SliderImageRepository" class="App\Repository\SliderImageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SliderImageRepository" class="App\Repository\SliderImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SliderRepository" class="App\Repository\SliderRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SliderRepository" class="App\Repository\SliderRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Validator\Constraint.0.App\Validator\Constraints\ImagesCount" class="App\Validator\Constraints\ImagesCount" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Validator\Constraints\ImagesCount.0.App\Validator\Constraints\ImagesCount" class="App\Validator\Constraints\ImagesCount" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Validator\Constraints\ImagesCount" class="App\Validator\Constraints\ImagesCount" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Validator\ConstraintValidatorInterface.0.App\Validator\Constraints\ImagesCountValidator" class="App\Validator\Constraints\ImagesCountValidator" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Validator\Constraints\ImagesCountValidator" class="App\Validator\Constraints\ImagesCountValidator" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Filter\FilterConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" abstract="true"/>
     <service id=".abstract.instanceof.EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\ChoiceConfigurator" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Filter\FilterConfiguratorInterface.0.EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\CommonConfigurator" class="EasyCorp\Bundle\EasyAdminBundle\Filter\Configurator\CommonConfigurator" abstract="true"/>
@@ -12149,6 +12189,132 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ib1WIGE" method="withContext"/>
     </service>
+    <service id=".service_locator.OoSfY9L.App\Controller\Admin\SliderImageCrudController::configureCrud()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::configureCrud()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::configureCrud()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.OoSfY9L" method="withContext"/>
+    </service>
+    <service id=".service_locator.PE.ZUUL.App\Controller\Admin\SliderImageCrudController::configureAssets()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::configureAssets()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::configureAssets()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.PE.ZUUL" method="withContext"/>
+    </service>
+    <service id=".service_locator.T.Ra9lS.App\Controller\Admin\SliderImageCrudController::configureActions()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::configureActions()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::configureActions()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.T.Ra9lS" method="withContext"/>
+    </service>
+    <service id=".service_locator.CFbfVRp.App\Controller\Admin\SliderImageCrudController::configureFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::configureFilters()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::configureFilters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CFbfVRp" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::index()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::detail()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::detail()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::detail()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::edit()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::new()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::delete()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.oDo8ofG.App\Controller\Admin\SliderImageCrudController::batchDelete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::batchDelete()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::batchDelete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.oDo8ofG" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::autocomplete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::autocomplete()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::autocomplete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.kqcX6wc.App\Controller\Admin\SliderImageCrudController::createIndexQueryBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::createIndexQueryBuilder()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::createIndexQueryBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.kqcX6wc" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::renderFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::renderFilters()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::renderFilters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::updateEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::updateEntity()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::updateEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::persistEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::persistEntity()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::persistEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::deleteEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::deleteEntity()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::deleteEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createEditForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::createEditForm()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::createEditForm()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CaejQBj" method="withContext"/>
+    </service>
+    <service id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createEditFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::createEditFormBuilder()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::createEditFormBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CaejQBj" method="withContext"/>
+    </service>
+    <service id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createNewForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::createNewForm()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::createNewForm()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CaejQBj" method="withContext"/>
+    </service>
+    <service id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createNewFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::createNewFormBuilder()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::createNewFormBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CaejQBj" method="withContext"/>
+    </service>
+    <service id=".service_locator.ib1WIGE.App\Controller\Admin\SliderImageCrudController::configureResponseParameters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController::configureResponseParameters()"/>
+      <argument>App\Controller\Admin\SliderImageCrudController::configureResponseParameters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ib1WIGE" method="withContext"/>
+    </service>
     <service id=".service_locator.OoSfY9L.App\Controller\Admin\UserCrudController::configureCrud()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\UserCrudController::configureCrud()"/>
       <argument>App\Controller\Admin\UserCrudController::configureCrud()</argument>
@@ -12288,7 +12454,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.A84gqGd" method="withContext"/>
     </service>
-    <service id=".service_locator.fa7y.Iw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gBAl1eH" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -12464,6 +12630,27 @@
         <argument key="App\Controller\Admin\SliderCrudController::createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\SliderCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\SliderCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\SliderCrudController::configureResponseParameters()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\SliderImageCrudController::configureCrud()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\SliderImageCrudController::configureAssets()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\SliderImageCrudController::configureActions()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::configureFilters" type="service_closure" id=".service_locator.CFbfVRp.App\Controller\Admin\SliderImageCrudController::configureFilters()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::index" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::index()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::detail" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::detail()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::edit" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::edit()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::new" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::new()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::delete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::delete()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::batchDelete" type="service_closure" id=".service_locator.oDo8ofG.App\Controller\Admin\SliderImageCrudController::batchDelete()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::autocomplete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::autocomplete()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.kqcX6wc.App\Controller\Admin\SliderImageCrudController::createIndexQueryBuilder()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::renderFilters" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::renderFilters()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::updateEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::updateEntity()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::persistEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::persistEntity()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::deleteEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::deleteEntity()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::createEditForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createEditForm()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createEditFormBuilder()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createNewForm()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createNewFormBuilder()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\SliderImageCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\Admin\UserCrudController::configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\UserCrudController::configureCrud()"/>
         <argument key="App\Controller\Admin\UserCrudController::configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\UserCrudController::configureAssets()"/>
         <argument key="App\Controller\Admin\UserCrudController::configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\UserCrudController::configureActions()"/>
@@ -12657,6 +12844,27 @@
         <argument key="App\Controller\Admin\SliderCrudController:createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\SliderCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\SliderCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\SliderCrudController::configureResponseParameters()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\SliderImageCrudController::configureCrud()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\SliderImageCrudController::configureAssets()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\SliderImageCrudController::configureActions()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:configureFilters" type="service_closure" id=".service_locator.CFbfVRp.App\Controller\Admin\SliderImageCrudController::configureFilters()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:index" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::index()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:detail" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::detail()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:edit" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::edit()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:new" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::new()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:delete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::delete()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:batchDelete" type="service_closure" id=".service_locator.oDo8ofG.App\Controller\Admin\SliderImageCrudController::batchDelete()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:autocomplete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::autocomplete()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.kqcX6wc.App\Controller\Admin\SliderImageCrudController::createIndexQueryBuilder()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:renderFilters" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\SliderImageCrudController::renderFilters()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:updateEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::updateEntity()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:persistEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::persistEntity()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:deleteEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\SliderImageCrudController::deleteEntity()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:createEditForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createEditForm()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createEditFormBuilder()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createNewForm()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\SliderImageCrudController::createNewFormBuilder()"/>
+        <argument key="App\Controller\Admin\SliderImageCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\SliderImageCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\Admin\UserCrudController:configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\UserCrudController::configureCrud()"/>
         <argument key="App\Controller\Admin\UserCrudController:configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\UserCrudController::configureAssets()"/>
         <argument key="App\Controller\Admin\UserCrudController:configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\UserCrudController::configureActions()"/>
@@ -12681,9 +12889,10 @@
         <argument key="App\Controller\SigninController:index" type="service_closure" id=".service_locator.A84gqGd.App\Controller\SigninController::index()"/>
       </argument>
     </service>
-    <service id=".service_locator.HxALDTI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.dgARDkS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Validator\Constraints\ImagesCountValidator" type="service_closure" id="App\Validator\Constraints\ImagesCountValidator"/>
         <argument key="validator.expression" type="service_closure" id="validator.expression"/>
         <argument key="Symfony\Component\Validator\Constraints\ExpressionValidator" type="service_closure" id="validator.expression"/>
         <argument key="Symfony\Component\Validator\Constraints\EmailValidator" type="service_closure" id="validator.email"/>
@@ -13111,7 +13320,7 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.CIux3Jc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.XcXRtcZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CarouselImageRepository" type="service_closure" id="App\Repository\CarouselImageRepository"/>
@@ -13121,6 +13330,7 @@
         <argument key="App\Repository\PageRepository" type="service_closure" id="App\Repository\PageRepository"/>
         <argument key="App\Repository\PriceListRepository" type="service_closure" id="App\Repository\PriceListRepository"/>
         <argument key="App\Repository\SectionRepository" type="service_closure" id="App\Repository\SectionRepository"/>
+        <argument key="App\Repository\SliderImageRepository" type="service_closure" id="App\Repository\SliderImageRepository"/>
         <argument key="App\Repository\SliderRepository" type="service_closure" id="App\Repository\SliderRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
@@ -13378,6 +13588,7 @@
         <argument key="App\Controller\Admin\PriceListCrudController">App\Entity\PriceList</argument>
         <argument key="App\Controller\Admin\SectionCrudController">App\Entity\Section</argument>
         <argument key="App\Controller\Admin\SliderCrudController">App\Entity\Slider</argument>
+        <argument key="App\Controller\Admin\SliderImageCrudController">App\Entity\SliderImage</argument>
         <argument key="App\Controller\Admin\UserCrudController">App\Entity\User</argument>
       </argument>
       <argument type="collection">
@@ -13389,6 +13600,7 @@
         <argument key="App\Controller\Admin\PriceListCrudController" type="string">2603e95</argument>
         <argument key="App\Controller\Admin\SectionCrudController">7c5a3e4</argument>
         <argument key="App\Controller\Admin\SliderCrudController" type="string">3482975</argument>
+        <argument key="App\Controller\Admin\SliderImageCrudController">a1581c0</argument>
         <argument key="App\Controller\Admin\UserCrudController">e258ef6</argument>
       </argument>
       <argument type="collection">
@@ -13400,6 +13612,7 @@
         <argument key="App\Entity\PriceList">App\Controller\Admin\PriceListCrudController</argument>
         <argument key="App\Entity\Section">App\Controller\Admin\SectionCrudController</argument>
         <argument key="App\Entity\Slider">App\Controller\Admin\SliderCrudController</argument>
+        <argument key="App\Entity\SliderImage">App\Controller\Admin\SliderImageCrudController</argument>
         <argument key="App\Entity\User">App\Controller\Admin\UserCrudController</argument>
       </argument>
       <argument type="collection">
@@ -13411,6 +13624,7 @@
         <argument key="2603e95">App\Controller\Admin\PriceListCrudController</argument>
         <argument key="7c5a3e4">App\Controller\Admin\SectionCrudController</argument>
         <argument key="3482975">App\Controller\Admin\SliderCrudController</argument>
+        <argument key="a1581c0">App\Controller\Admin\SliderImageCrudController</argument>
         <argument key="e258ef6">App\Controller\Admin\UserCrudController</argument>
       </argument>
     </service>
@@ -13528,6 +13742,12 @@
     <service id=".service_locator.OkS5_e6.App\Controller\Admin\SliderCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\SliderCrudController"/>
       <argument>App\Controller\Admin\SliderCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.OkS5_e6" method="withContext"/>
+    </service>
+    <service id=".service_locator.OkS5_e6.App\Controller\Admin\SliderImageCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SliderImageCrudController"/>
+      <argument>App\Controller\Admin\SliderImageCrudController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.OkS5_e6" method="withContext"/>
     </service>
@@ -13836,6 +14056,7 @@
           <argument>App\Controller\Admin\PriceListCrudController</argument>
           <argument>App\Controller\Admin\SectionCrudController</argument>
           <argument>App\Controller\Admin\SliderCrudController</argument>
+          <argument>App\Controller\Admin\SliderImageCrudController</argument>
           <argument>App\Controller\Admin\UserCrudController</argument>
           <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\SigninController</argument>
@@ -15789,7 +16010,7 @@
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="api_platform.name_converter" alias="api_platform.hydra.name_converter.hydra_prefix"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.fa7y.Iw"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.gBAl1eH"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -15814,7 +16035,7 @@
     <service id=".service_locator.kVuTj7R" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.58WvHxo" alias="service_locator_EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     <service id=".service_locator.9LJrHhf" alias="api_platform.serializer_locator"/>
-    <service id=".service_locator.JLytdW3" alias=".service_locator.HxALDTI"/>
+    <service id=".service_locator.w2vsPuD" alias=".service_locator.dgARDkS"/>
     <service id="api_platform.metadata.resource.metadata_collection_factory.parameter.inner" alias="api_platform.metadata.resource.metadata_collection_factory.attributes"/>
     <service id="api_platform.validator.metadata.resource.metadata_collection_factory.parameter.inner" alias="api_platform.metadata.resource.metadata_collection_factory.parameter"/>
     <service id="api_platform.metadata.resource.name_collection_factory.php_file.inner" alias="api_platform.metadata.resource.name_collection_factory.xml"/>

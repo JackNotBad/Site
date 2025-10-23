@@ -39,8 +39,7 @@ class ImageCrudController extends AbstractCrudController
     {
         return $crud
             ->setEntityLabelInSingular('Image')
-            ->setEntityLabelInPlural('Images')
-            ->setDefaultSort(['id' => 'DESC']);
+            ->setEntityLabelInPlural('Images');
     }
 
     public function configureFields(string $pageName): iterable
@@ -58,7 +57,6 @@ class ImageCrudController extends AbstractCrudController
             ->onlyOnForms();
 
         return [
-            IdField::new('id')->hideOnForm(),
             $preview,
             $uploadField,
             TextField::new('alt', 'Description alt'),

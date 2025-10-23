@@ -29,6 +29,7 @@ class Page extends \App\Entity\Page implements \Doctrine\ORM\Proxy\InternalProxy
         "\0".parent::class."\0".'messages' => [parent::class, 'messages', null, 16],
         "\0".parent::class."\0".'priceLists' => [parent::class, 'priceLists', null, 16],
         "\0".parent::class."\0".'sections' => [parent::class, 'sections', null, 16],
+        "\0".parent::class."\0".'sliders' => [parent::class, 'sliders', null, 16],
         'Name' => [parent::class, 'Name', null, 16],
         'Title' => [parent::class, 'Title', null, 16],
         'carousels' => [parent::class, 'carousels', null, 16],
@@ -36,6 +37,7 @@ class Page extends \App\Entity\Page implements \Doctrine\ORM\Proxy\InternalProxy
         'messages' => [parent::class, 'messages', null, 16],
         'priceLists' => [parent::class, 'priceLists', null, 16],
         'sections' => [parent::class, 'sections', null, 16],
+        'sliders' => [parent::class, 'sliders', null, 16],
     ];
 
     public function __isInitialized(): bool

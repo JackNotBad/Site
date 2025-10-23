@@ -326,6 +326,46 @@ return [PHP_INT_MAX, [
         'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController',
         'crudAction' => 'detail',
     ],
+    'admin_slider_image_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_slider_image_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_slider_image_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_slider_image_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_slider_image_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_slider_image_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_slider_image_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_slider_image_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController',
+        'crudAction' => 'detail',
+    ],
     'admin_user_index' => [
         'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
         'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController',

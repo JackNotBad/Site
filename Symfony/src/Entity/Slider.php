@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\SliderRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\SliderRepository;
 use ApiPlatform\Metadata\ApiResource;
+use App\Validator\Constraints as AppAssert;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ApiResource]
 #[ORM\Entity(repositoryClass: SliderRepository::class)]
@@ -22,6 +23,10 @@ class Slider
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
     private ?Page $page = null;
 
+    /**
+     * @var Collection<int, SliderImage>
+     */
+    // #[AppAssert\ImagesCount(expectedCount: 5, message: 'Le slider doit contenir exactement %expected% images. Actuellement : %count%.')]
     #[ORM\OneToMany(mappedBy: 'slider', targetEntity: SliderImage::class, cascade: ['persist','remove'], orphanRemoval: true)]
     private Collection $images;
 

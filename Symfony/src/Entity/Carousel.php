@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\CarouselRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use App\Repository\CarouselRepository;
+use App\Validator\Constraints as AppAssert;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ApiResource]
 #[ORM\Entity(repositoryClass: CarouselRepository::class)]
@@ -17,11 +18,12 @@ class Carousel
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
-    
+
     #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'carousels')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
     private ?Page $page = null;
 
+    // #[AppAssert\ImagesCount(expectedCount: 7, message: 'Le carousel doit contenir exactement %expected% images. Actuellement : %count%.')]
     #[ORM\OneToMany(mappedBy: 'carousel', targetEntity: CarouselImage::class, cascade: ['persist','remove'], orphanRemoval: true)]
     private Collection $images;
 

@@ -85,6 +85,16 @@ return [PHP_INT_MAX, [
             'delete' => 'admin_slider_delete',
             'detail' => 'admin_slider_detail',
         ],
+        'App\\Controller\\Admin\\SliderImageCrudController' => [
+            'index' => 'admin_slider_image_index',
+            'new' => 'admin_slider_image_new',
+            'batchDelete' => 'admin_slider_image_batch_delete',
+            'autocomplete' => 'admin_slider_image_autocomplete',
+            'renderFilters' => 'admin_slider_image_render_filters',
+            'edit' => 'admin_slider_image_edit',
+            'delete' => 'admin_slider_image_delete',
+            'detail' => 'admin_slider_image_detail',
+        ],
         'App\\Controller\\Admin\\UserCrudController' => [
             'index' => 'admin_user_index',
             'new' => 'admin_user_new',
