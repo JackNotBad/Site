@@ -2,18 +2,30 @@
 
 namespace App\Entity;
 
-use App\Repository\CarouselImageRepository;
+use App\Entity\Image;
+use App\Entity\Carousel;
+use ApiPlatform\Metadata\Get;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
+use App\Repository\CarouselImageRepository;
+use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource]
+#[ApiResource(
+    operations: [
+        new Get(normalizationContext: ['groups' => 'carouselImage:item']),
+        new GetCollection(normalizationContext: ['groups' => 'carouselImage:list'])
+    ],
+)]
 #[ORM\Entity(repositoryClass: CarouselImageRepository::class)]
 class CarouselImage
 {
     #[ORM\Id, ORM\GeneratedValue, ORM\Column]
+    #[Groups(['carousel:item','carousel:list'])]
     private ?int $id = null;
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'integer')]    
+    #[Groups(['carousel:item','carousel:list'])]
     private int $position = 0;
 
     #[ORM\ManyToOne(targetEntity: Carousel::class, inversedBy: 'images')]
@@ -22,6 +34,7 @@ class CarouselImage
 
     #[ORM\ManyToOne(targetEntity: Image::class, inversedBy: 'carouselImages')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'RESTRICT')]
+    #[Groups(['carousel:item','carousel:list'])]
     private ?Image $image = null;
 
     public function getId(): ?int

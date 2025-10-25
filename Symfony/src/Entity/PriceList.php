@@ -39,6 +39,11 @@ class PriceList
     #[ORM\ManyToOne(inversedBy: 'priceLists')]
     private ?Page $Page_Id = null;
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Paris'));
+    }
+    
     public function getId(): ?int
     {
         return $this->id;

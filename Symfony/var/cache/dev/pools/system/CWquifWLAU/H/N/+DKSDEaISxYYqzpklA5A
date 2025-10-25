@@ -13,6 +13,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
                     'title',
                     'page',
                     'images',
+                    'text',
                 ],
             ],
         ],

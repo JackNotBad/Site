@@ -18,7 +18,7 @@ class Message
     #[ORM\Column(length: 255)]
     private ?string $subject = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1200)]
     private ?string $content = null;
 
     #[ORM\Column]
@@ -32,6 +32,11 @@ class Message
 
     #[ORM\ManyToOne(inversedBy: 'messages')]
     private ?Page $Page_Id = null;
+
+    public function __construct()
+    {
+        $this->sendAt = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Paris'));
+    }
 
     public function getId(): ?int
     {

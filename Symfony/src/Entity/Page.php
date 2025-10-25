@@ -2,17 +2,29 @@
 
 namespace App\Entity;
 
+use App\Entity\Slider;
 use App\Entity\Message;
 use App\Entity\Section;
 use App\Entity\Carousel;
 use App\Entity\PriceList;
+use ApiPlatform\Metadata\Get;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PageRepository;
+use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource]
+#[ApiResource(
+    operations: [
+        new Get(normalizationContext: ['groups' => 'page:item']),
+        new GetCollection(normalizationContext: ['groups' => 'page:list'])
+    ],
+)]
+#[ApiFilter(SearchFilter::class)]
 #[ORM\Entity(repositoryClass: PageRepository::class)]
 class Page
 {
@@ -22,9 +34,11 @@ class Page
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['page:item', 'page:list'])]
     private ?string $Title = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['page:item', 'page:list'])]
     private ?string $Name = null;
 
     /**

@@ -1,34 +1,21 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import parse from "html-react-parser";
 import Slider from "../components/Slider";
 import Carousel from "../components/Carousel";
-import passionCanopees from "../assets/Accueil/passion-canopees.png";
-import carousel1 from "../assets/Accueil/carousel/carousel1.png";
-import carousel2 from "../assets/Accueil/carousel/carousel2.png";
-import carousel3 from "../assets/Accueil/carousel/carousel3.png";
-import carousel4 from "../assets/Accueil/carousel/carousel4.png";
-import carousel5 from "../assets/Accueil/carousel/carousel5.png";
-import carousel6 from "../assets/Accueil/carousel/carousel6.png";
-import carousel7 from "../assets/Accueil/carousel/carousel7.png";
+import { nettoyerTexte } from '../utils';
+
 
 const backPublicPath = "http://localhost:8000/uploads/";
 
 export default function Accueil() {
-  const photos = [
-    carousel1,
-    carousel2,
-    carousel3,
-    carousel4,
-    carousel5,
-    carousel6,
-    carousel7,
-  ];
 
   const [modifications, setModifications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [carousels, setCarousels] = useState([]);
 
   useEffect(() => {
-    fetch("https://127.0.0.1:8000/api/site_modifications?page=Accueil")
+    fetch("https://127.0.0.1:8000/api/sections/?Page_Id=1")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erreur lors de la récupération des données");
@@ -38,11 +25,13 @@ export default function Accueil() {
       .then((data) => {
         const arrayModifications = data.member.map((item) => ({
           id: item.id,
-          image: item.image,
-          position: item.position,
-          texte: item.texte,
+          image: item.Image_Id,
+          position: item.Position,
+          texte: item.Text,
+          titre: item.Title,
+          url: item.Image_Id?.url,
+          alt: item.Image_Id?.alt,
         }));
-        console.log(data);
         setModifications(arrayModifications);
         setIsLoading(false);
       })
@@ -51,6 +40,47 @@ export default function Accueil() {
         setIsLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://127.0.0.1:8000/api/carousels/")
+      .then((response) => {
+        if (!response.ok) throw new Error("Erreur carousels: " + response.status);
+        return response.json();
+      })
+      .then((data) => {
+        const members = data?.member ?? [];
+
+        const result = members.map((carousel) => {
+          const cid = carousel?.id ?? null;
+          const ctitle = carousel?.title ?? "";
+          const imgs = (carousel.images ?? [])
+            .slice()
+            .sort((a, b) => (a.position ?? 0) - (b.position ?? 0))
+            .map((carouselitem) => {
+              const filename = carouselitem?.image?.url;
+              if (!filename) return null;
+              return {
+                url: backPublicPath + String(filename).replace(/^\//, ""),
+                alt: carouselitem?.image?.alt ?? "",
+                position: carouselitem?.position ?? null,
+              };
+            })
+            .filter(Boolean);
+
+          return { id: cid, title: ctitle, images: imgs };
+        });
+
+        setCarousels(result);
+      })
+      .catch((err) => {
+        console.error("Erreur fetch carousels:", err);
+        setCarousels([]);
+      });
+  }, []);
+
+  const photos = React.useMemo(() => {
+    return carousels.flatMap((c) => c.images.map((img) => img.url));
+  }, [carousels]);
 
   if (isLoading) {
     return <div className="text-center py-8">Chargement en cours...</div>;
@@ -69,7 +99,7 @@ export default function Accueil() {
           src={
             backPublicPath.concat(
               "",
-              modifications.find((item) => item.position === 1)?.image
+              modifications.find((item) => item.position === 1)?.url
             )
           }
           className="
@@ -78,7 +108,7 @@ export default function Accueil() {
             mx-auto mt-11
             lg:mt-0 lg:mx-0 lg:mr-26 lg:max-w-135 lg:w-135 lg:max-h-130 lg:h-130
           "
-          alt="part of the canopees team"
+          alt={modifications.find((item) => item.position === 1)?.alt}
         />
         <div
           className="
@@ -86,10 +116,10 @@ export default function Accueil() {
             lg:mt-0 lg:mx-0 lg:mr-26 lg:max-w-135 lg:w-135 lg:max-h-130 lg:h-130
           "
         >
-          <h2 className="mb-5">Canopées, c’est avant tout une équipe de passionnés</h2>
-          <div className="whitespace-pre-line">
-            {parse(modifications.find((item) => item.position === 1)?.texte)}
-          </div>
+          <h2 className="mb-5">{parse(nettoyerTexte(modifications.find((item) => item.position === 1)?.titre))}</h2>
+          <p className="whitespace-pre-line">
+            {parse(nettoyerTexte(modifications.find((item) => item.position === 1)?.texte))}
+          </p>
         </div>
       </section>
       <section
@@ -99,16 +129,9 @@ export default function Accueil() {
           lg:flex-row lg:text-left lg:max-w-300 lg:py-26
         "
       >
-        <div className="lg:order-0 order-1">
-          <h2 className="mb-5">Particuliers, Professionnels, Collectivitées</h2>
-          <div className="whitespace-pre-line">
-            {parse(modifications.find((item) => item.position === 2)?.texte)}
-          </div>
-        </div>
         <Slider />
       </section>
       <section className="flex-col max-w-300 px-5 mx-auto box-content flex">
-        <h2 className="text-center mb-5">Exemples de réalisations</h2>
         <Carousel photos={photos} startIndex={3} />
       </section>
     </>

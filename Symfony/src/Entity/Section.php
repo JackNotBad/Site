@@ -3,12 +3,23 @@
 namespace App\Entity;
 
 use App\Entity\Page;
+use ApiPlatform\Metadata\Get;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\SectionRepository;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource]
 #[ORM\Entity(repositoryClass: SectionRepository::class)]
+#[ApiResource(
+    operations: [
+        new Get(normalizationContext: ['groups' => 'sections:item']),
+        new GetCollection(normalizationContext: ['groups' => 'sections:list'])
+    ],
+)]
+#[ApiFilter(SearchFilter::class)]
 class Section
 {
     #[ORM\Id]
@@ -17,12 +28,15 @@ class Section
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['sections:item', 'sections:list'])]
     private ?string $Title = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
+    #[Groups(['sections:item', 'sections:list'])]
     private ?string $Text = null;
 
     #[ORM\Column]
+    #[Groups(['sections:item', 'sections:list'])]
     private ?int $Position = null;
 
     #[ORM\Column]
@@ -33,6 +47,7 @@ class Section
 
     #[ORM\ManyToOne(targetEntity: Image::class, cascade: ['persist'])]
     #[ORM\JoinColumn(nullable: true)]
+    #[Groups(['sections:item', 'sections:list'])]
     private ?Image $Image_Id = null;
 
     public function __construct()

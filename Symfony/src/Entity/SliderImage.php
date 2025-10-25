@@ -2,18 +2,30 @@
 
 namespace App\Entity;
 
-use App\Repository\SliderImageRepository;
+use App\Entity\Slider;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Link;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
+use App\Repository\SliderImageRepository;
+use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource]
+#[ApiResource(
+    operations: [
+        new Get(normalizationContext: ['groups' => 'sliderImages:item']),
+        new GetCollection(normalizationContext: ['groups' => 'sliderImages:list'])
+    ],
+)]
 #[ORM\Entity(repositoryClass: SliderImageRepository::class)]
 class SliderImage
 {
     #[ORM\Id, ORM\GeneratedValue, ORM\Column]
+    #[Groups(['sliders:list'])]
     private ?int $id = null;
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'integer')]    
+    #[Groups(['sliders:item', 'sliders:list'])]
     private int $position = 0;
 
     #[ORM\ManyToOne(targetEntity: Slider::class, inversedBy: 'images')]
@@ -22,6 +34,7 @@ class SliderImage
 
     #[ORM\ManyToOne(targetEntity: Image::class, inversedBy: 'sliderImages')]
     #[ORM\JoinColumn(nullable: false, onDelete: 'RESTRICT')]
+    #[Groups(['sliders:item', 'sliders:list'])]
     private ?Image $image = null;
 
     public function getId(): ?int

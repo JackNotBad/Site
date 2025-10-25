@@ -1,0 +1,3 @@
+<?php //f6260ee76b0e828c3fca366900619d2e
+
+return [PHP_INT_MAX, 'bundles/apiplatform/logo-header.svg'];

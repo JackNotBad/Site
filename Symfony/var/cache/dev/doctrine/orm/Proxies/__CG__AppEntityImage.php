@@ -23,14 +23,18 @@ class Image extends \App\Entity\Image implements \Doctrine\ORM\Proxy\InternalPro
 
     private const LAZY_OBJECT_PROPERTY_SCOPES = [
         "\0".parent::class."\0".'alt' => [parent::class, 'alt', null, 16],
+        "\0".parent::class."\0".'carouselImages' => [parent::class, 'carouselImages', null, 16],
         "\0".parent::class."\0".'createdAt' => [parent::class, 'createdAt', null, 16],
         "\0".parent::class."\0".'file' => [parent::class, 'file', null, 16],
         "\0".parent::class."\0".'id' => [parent::class, 'id', null, 16],
+        "\0".parent::class."\0".'sliderImages' => [parent::class, 'sliderImages', null, 16],
         "\0".parent::class."\0".'url' => [parent::class, 'url', null, 16],
         'alt' => [parent::class, 'alt', null, 16],
+        'carouselImages' => [parent::class, 'carouselImages', null, 16],
         'createdAt' => [parent::class, 'createdAt', null, 16],
         'file' => [parent::class, 'file', null, 16],
         'id' => [parent::class, 'id', null, 16],
+        'sliderImages' => [parent::class, 'sliderImages', null, 16],
         'url' => [parent::class, 'url', null, 16],
     ];
 

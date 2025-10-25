@@ -25,10 +25,12 @@ class Slider extends \App\Entity\Slider implements \Doctrine\ORM\Proxy\InternalP
         "\0".parent::class."\0".'id' => [parent::class, 'id', null, 16],
         "\0".parent::class."\0".'images' => [parent::class, 'images', null, 16],
         "\0".parent::class."\0".'page' => [parent::class, 'page', null, 16],
+        "\0".parent::class."\0".'text' => [parent::class, 'text', null, 16],
         "\0".parent::class."\0".'title' => [parent::class, 'title', null, 16],
         'id' => [parent::class, 'id', null, 16],
         'images' => [parent::class, 'images', null, 16],
         'page' => [parent::class, 'page', null, 16],
+        'text' => [parent::class, 'text', null, 16],
         'title' => [parent::class, 'title', null, 16],
     ];
 

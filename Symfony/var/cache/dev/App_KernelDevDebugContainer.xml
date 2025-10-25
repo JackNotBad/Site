@@ -713,10 +713,10 @@
       </call>
     </service>
     <service id="App\Entity\Carousel" class="App\Entity\Carousel" autowire="true" autoconfigure="true">
-      <tag name="api_platform.resource"/>
-      <tag name="container.excluded" source="by #[ApiResource] attribute"/>
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+      <tag name="container.excluded" source="by #[ApiResource] attribute"/>
+      <tag name="api_platform.resource"/>
     </service>
     <service id="App\Entity\CarouselImage" class="App\Entity\CarouselImage" autowire="true" autoconfigure="true">
       <tag name="api_platform.resource"/>
@@ -749,10 +749,10 @@
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
     <service id="App\Entity\Section" class="App\Entity\Section" autowire="true" autoconfigure="true">
-      <tag name="api_platform.resource"/>
-      <tag name="container.excluded" source="by #[ApiResource] attribute"/>
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+      <tag name="container.excluded" source="by #[ApiResource] attribute"/>
+      <tag name="api_platform.resource"/>
     </service>
     <service id="App\Entity\Slider" class="App\Entity\Slider" autowire="true" autoconfigure="true">
       <tag name="api_platform.resource"/>
@@ -1223,7 +1223,7 @@
     <service id="container.get_routing_condition_service" class="Closure" public="true">
       <tag name="routing.expression_language_function" function="service"/>
       <argument type="collection">
-        <argument type="service" id="api_platform.filter_locator"/>
+        <argument type="service" id=".service_locator.GIuJv7e"/>
         <argument>get</argument>
       </argument>
       <factory class="Closure" method="fromCallable"/>
@@ -4871,7 +4871,7 @@
         <argument type="service" id="validator.validator_factory"/>
       </call>
       <call method="setGroupProviderLocator">
-        <argument type="service" id="api_platform.filter_locator"/>
+        <argument type="service" id=".service_locator.GIuJv7e"/>
       </call>
       <call method="setTranslator">
         <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
@@ -7037,7 +7037,7 @@
       <tag name="twig.extension"/>
     </service>
     <service id="twig.extension.htmlsanitizer" class="Symfony\Bridge\Twig\Extension\HtmlSanitizerExtension">
-      <argument type="service" id="api_platform.filter_locator"/>
+      <argument type="service" id=".service_locator.GIuJv7e"/>
     </service>
     <service id="twig.extension.httpkernel" class="Symfony\Bridge\Twig\Extension\HttpKernelExtension">
       <tag name="twig.extension"/>
@@ -7268,7 +7268,7 @@
     </service>
     <service id="turbo.twig.runtime" class="Symfony\UX\Turbo\Twig\TurboRuntime">
       <tag name="twig.runtime"/>
-      <argument type="service" id="api_platform.filter_locator"/>
+      <argument type="service" id=".service_locator.GIuJv7e"/>
       <argument>default</argument>
     </service>
     <service id="turbo.doctrine.event_listener" class="Symfony\UX\Turbo\Doctrine\BroadcastListener">
@@ -8592,7 +8592,7 @@
     <service id="ux.twig_component.twig.component_runtime" class="Symfony\UX\TwigComponent\Twig\ComponentRuntime">
       <tag name="twig.runtime"/>
       <argument type="service" id="ux.twig_component.component_renderer"/>
-      <argument type="service" id="api_platform.filter_locator"/>
+      <argument type="service" id=".service_locator.GIuJv7e"/>
     </service>
     <service id="ux.twig_component.twig.lexer" class="Symfony\UX\TwigComponent\Twig\ComponentLexer"/>
     <service id="ux.twig_component.twig.environment_configurator" class="Symfony\UX\TwigComponent\Twig\TwigEnvironmentConfigurator">
@@ -9203,7 +9203,12 @@
     </service>
     <service id="api_platform.filter_locator" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="annotated_app_entity_carousel_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_carousel_api_platform_doctrine_orm_filter_search_filter"/>
+        <argument key="annotated_app_entity_page_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_page_api_platform_doctrine_orm_filter_search_filter"/>
+        <argument key="annotated_app_entity_section_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_section_api_platform_doctrine_orm_filter_search_filter"/>
+        <argument key="annotated_app_entity_slider_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_slider_api_platform_doctrine_orm_filter_search_filter"/>
+      </argument>
     </service>
     <service id="api_platform.symfony.uri_variables.transformer.ulid" class="ApiPlatform\Symfony\UriVariableTransformer\UlidUriVariableTransformer">
       <tag name="api_platform.uri_variables.transformer"/>
@@ -9995,7 +10000,7 @@
     </service>
     <service id="api_platform.validator" class="ApiPlatform\Symfony\Validator\Validator">
       <argument type="service" id="debug.validator"/>
-      <argument type="service" id="api_platform.filter_locator"/>
+      <argument type="service" id=".service_locator.GIuJv7e"/>
     </service>
     <service id="api_platform.validator.state.error_provider" class="ApiPlatform\Symfony\Validator\State\ErrorProvider">
       <tag name="api_platform.state_provider" key="api_platform.validator.state.error_provider"/>
@@ -10213,6 +10218,46 @@
       <call method="setDescription">
         <argument>Generate public/private keys for use in your application.</argument>
       </call>
+    </service>
+    <service id="annotated_app_entity_carousel_api_platform_doctrine_orm_filter_search_filter" class="ApiPlatform\Doctrine\Orm\Filter\SearchFilter" autowire="true">
+      <tag name="api_platform.filter"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="api_platform.symfony.iri_converter"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+      <argument>null</argument>
+      <argument type="service" id="api_platform.api.identifiers_extractor" on-invalid="ignore"/>
+      <argument type="service" id="api_platform.hydra.name_converter.hydra_prefix" on-invalid="ignore"/>
+    </service>
+    <service id="annotated_app_entity_page_api_platform_doctrine_orm_filter_search_filter" class="ApiPlatform\Doctrine\Orm\Filter\SearchFilter" autowire="true">
+      <tag name="api_platform.filter"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="api_platform.symfony.iri_converter"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+      <argument>null</argument>
+      <argument type="service" id="api_platform.api.identifiers_extractor" on-invalid="ignore"/>
+      <argument type="service" id="api_platform.hydra.name_converter.hydra_prefix" on-invalid="ignore"/>
+    </service>
+    <service id="annotated_app_entity_section_api_platform_doctrine_orm_filter_search_filter" class="ApiPlatform\Doctrine\Orm\Filter\SearchFilter" autowire="true">
+      <tag name="api_platform.filter"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="api_platform.symfony.iri_converter"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+      <argument>null</argument>
+      <argument type="service" id="api_platform.api.identifiers_extractor" on-invalid="ignore"/>
+      <argument type="service" id="api_platform.hydra.name_converter.hydra_prefix" on-invalid="ignore"/>
+    </service>
+    <service id="annotated_app_entity_slider_api_platform_doctrine_orm_filter_search_filter" class="ApiPlatform\Doctrine\Orm\Filter\SearchFilter" autowire="true">
+      <tag name="api_platform.filter"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="api_platform.symfony.iri_converter"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+      <argument>null</argument>
+      <argument type="service" id="api_platform.api.identifiers_extractor" on-invalid="ignore"/>
+      <argument type="service" id="api_platform.hydra.name_converter.hydra_prefix" on-invalid="ignore"/>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CarouselCrudController" class="App\Controller\Admin\CarouselCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CarouselCrudController" class="App\Controller\Admin\CarouselCrudController" autowire="true" abstract="true"/>
@@ -13874,6 +13919,10 @@
         <argument key="reverse_container" type="service_closure" id="reverse_container" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
+    <service id=".service_locator.GIuJv7e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
     <service id=".service_locator.DOrA4Nm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -15895,6 +15944,7 @@
     <service id=".Doctrine\DBAL\Connection $default.connection" alias="doctrine.dbal.default_connection"/>
     <service id="Doctrine\DBAL\Connection $defaultConnection" alias="doctrine.dbal.default_connection"/>
     <service id="Doctrine\ORM\EntityManagerInterface" alias="doctrine.orm.default_entity_manager"/>
+    <service id="doctrine.orm.metadata.annotation_reader" alias="annotation_reader"/>
     <service id="doctrine.orm.entity_manager" alias="doctrine.orm.default_entity_manager" public="true"/>
     <service id="doctrine.orm.default_metadata_cache" alias="cache.doctrine.orm.default.metadata"/>
     <service id="doctrine.orm.default_result_cache" alias="cache.doctrine.orm.default.result"/>
@@ -16035,6 +16085,7 @@
     <service id=".service_locator.kVuTj7R" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.58WvHxo" alias="service_locator_EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     <service id=".service_locator.9LJrHhf" alias="api_platform.serializer_locator"/>
+    <service id=".service_locator.pbeGbF0" alias="api_platform.filter_locator"/>
     <service id=".service_locator.w2vsPuD" alias=".service_locator.dgARDkS"/>
     <service id="api_platform.metadata.resource.metadata_collection_factory.parameter.inner" alias="api_platform.metadata.resource.metadata_collection_factory.attributes"/>
     <service id="api_platform.validator.metadata.resource.metadata_collection_factory.parameter.inner" alias="api_platform.metadata.resource.metadata_collection_factory.parameter"/>
@@ -16128,7 +16179,6 @@
     <service id="api_platform.metadata.property.name_collection_factory.cached.inner" alias="api_platform.metadata.property.name_collection_factory.yaml"/>
     <service id="api_platform.metadata.property.metadata_factory.cached.inner" alias="api_platform.json_schema.metadata.property.metadata_factory.schema"/>
     <service id="api_platform.metadata.resource.metadata_collection_factory.cached.inner" alias="api_platform.doctrine.orm.metadata.resource.metadata_collection_factory"/>
-    <service id=".service_locator.GIuJv7e" alias="api_platform.filter_locator"/>
     <service id=".service_locator.n_ENPtW" alias=".service_locator.zHyJIs5"/>
     <service id=".service_locator.H3LT0te" alias=".service_locator.OoSfY9L"/>
     <service id=".service_locator.t8Qttrp" alias=".service_locator.PE.ZUUL"/>
