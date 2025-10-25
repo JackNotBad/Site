@@ -34,8 +34,6 @@ export default function Header() {
       });
   }, []);
 
-  console.log(page, "page")
-
   const titles = {
     "/": page.find((item) => item.name === "accueil")?.titre,
     "/about": page.find((item) => item.name === "presentation")?.titre,

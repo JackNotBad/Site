@@ -32,7 +32,6 @@ export default function CarouselInstagram({ photos, startIndex = 0  }) {
     setActiveIndex(index);
   };
 
-  // Aller à un index spécifique (clic sur un indicateur)
   const goToIndex = (index) => {
     const scrollWidth =
       carouselRef.current.scrollWidth - carouselRef.current.offsetWidth;
@@ -77,7 +76,6 @@ export default function CarouselInstagram({ photos, startIndex = 0  }) {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       >
-      <h2 className="text-center mb-5">Exemples de réalisations</h2>
         {photos.map((photo, i) => (
           <div
             key={i}

@@ -18,7 +18,6 @@ export default function Slider() {
         return response.json();
       })
       .then((data) => {
-        console.log(data, "sliders")
         const members = data?.member ?? [];
 
         const result = members.map((slider) => {

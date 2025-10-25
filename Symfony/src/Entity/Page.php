@@ -34,11 +34,11 @@ class Page
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['page:item', 'page:list'])]
+    #[Groups(['page:item', 'page:list','carousel:item', 'carousel:list'])]
     private ?string $Title = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['page:item', 'page:list'])]
+    #[Groups(['page:item', 'page:list','carousel:item', 'carousel:list'])]
     private ?string $Name = null;
 
     /**

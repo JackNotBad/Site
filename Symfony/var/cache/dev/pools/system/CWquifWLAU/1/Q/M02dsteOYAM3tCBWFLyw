@@ -27,10 +27,10 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
                 true,
             ],
             'readableLink' => [
-                false,
+                true,
             ],
             'writableLink' => [
-                false,
+                true,
             ],
             'required' => [
                 false,
@@ -76,9 +76,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
             ],
             'schema' => [
                 [
-                    'type' => 'string',
-                    'format' => 'iri-reference',
-                    'example' => 'https://example.com/',
+                    'type' => 'unknown_type',
                 ],
             ],
             'initializable' => [

@@ -1,38 +1,32 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import parse from "html-react-parser";
 import Slider from "../components/Slider";
+import Section from "../components/Sections";
 import Carousel from "../components/Carousel";
-import { nettoyerTexte } from '../utils';
-
-
-const backPublicPath = "http://localhost:8000/uploads/";
+import { backPublicPath } from '../utils';
 
 export default function Accueil() {
 
-  const [modifications, setModifications] = useState([]);
+  const [sections, setSections] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [carousels, setCarousels] = useState([]);
 
   useEffect(() => {
     fetch("https://127.0.0.1:8000/api/sections/?Page_Id=1")
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erreur lors de la récupération des données");
-        }
+        if (!response.ok) throw new Error("Erreur réseau");
         return response.json();
       })
       .then((data) => {
-        const arrayModifications = data.member.map((item) => ({
+        const formattedSections = data.member.map((item) => ({
           id: item.id,
-          image: item.Image_Id,
+          title: item.Title,
+          text: item.Text,
+          imgSrc: item.Image_Id?.url,
+          imgAlt: item.Image_Id?.alt,
           position: item.Position,
-          texte: item.Text,
-          titre: item.Title,
-          url: item.Image_Id?.url,
-          alt: item.Image_Id?.alt,
         }));
-        setModifications(arrayModifications);
+        setSections(formattedSections);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -53,6 +47,7 @@ export default function Accueil() {
         const result = members.map((carousel) => {
           const cid = carousel?.id ?? null;
           const ctitle = carousel?.title ?? "";
+          const cpage = carousel?.page?.Name ?? "";
           const imgs = (carousel.images ?? [])
             .slice()
             .sort((a, b) => (a.position ?? 0) - (b.position ?? 0))
@@ -67,7 +62,7 @@ export default function Accueil() {
             })
             .filter(Boolean);
 
-          return { id: cid, title: ctitle, images: imgs };
+          return { id: cid, title: ctitle, page: cpage, images: imgs };
         });
 
         setCarousels(result);
@@ -79,8 +74,12 @@ export default function Accueil() {
   }, []);
 
   const photos = React.useMemo(() => {
-    return carousels.flatMap((c) => c.images.map((img) => img.url));
+    return carousels
+      .filter(c => String(c.page).toLowerCase() === 'accueil')
+      .flatMap(carouselItem => (carouselItem.images || []).map(img => img.url));
   }, [carousels]);
+
+  const getSectionByPosition = (pos) => sections.find((s) => s.position === pos);
 
   if (isLoading) {
     return <div className="text-center py-8">Chargement en cours...</div>;
@@ -88,40 +87,19 @@ export default function Accueil() {
 
   return (
     <>
-      <section
-        className="
-          flex flex-col text-center
-          max-w-150 mx-auto px-5 p-5 box-content
-          lg:flex-row lg:text-left lg:max-w-300 lg:py-26
-        "
-      >
-        <img
-          src={
-            backPublicPath.concat(
-              "",
-              modifications.find((item) => item.position === 1)?.url
-            )
-          }
-          className="
-            object-cover
-            max-w-88 w-full
-            mx-auto mt-11
-            lg:mt-0 lg:mx-0 lg:mr-26 lg:max-w-135 lg:w-135 lg:max-h-130 lg:h-130
-          "
-          alt={modifications.find((item) => item.position === 1)?.alt}
-        />
-        <div
-          className="
-            mb-0
-            lg:mt-0 lg:mx-0 lg:mr-26 lg:max-w-135 lg:w-135 lg:max-h-130 lg:h-130
-          "
+      {/* Section Accueil */}
+      {getSectionByPosition(1) && (
+        <Section
+          imgSrc={getSectionByPosition(1).imgSrc}
+          imgAlt={getSectionByPosition(1).imgAlt}
+          text={getSectionByPosition(1).text}
+          imgFirst={true}
         >
-          <h2 className="mb-5">{parse(nettoyerTexte(modifications.find((item) => item.position === 1)?.titre))}</h2>
-          <p className="whitespace-pre-line">
-            {parse(nettoyerTexte(modifications.find((item) => item.position === 1)?.texte))}
-          </p>
-        </div>
-      </section>
+          <h2>{getSectionByPosition(1).title}</h2>
+        </Section>
+      )}
+
+      {/* Section Slider */}
       <section
         className="
           flex flex-col text-center
@@ -131,7 +109,10 @@ export default function Accueil() {
       >
         <Slider />
       </section>
+
+      {/* Section Carousel */}
       <section className="flex-col max-w-300 px-5 mx-auto box-content flex">
+        <h2 className="text-center mb-5">{carousels.find((item) => item.page === 'accueil')?.title}</h2>
         <Carousel photos={photos} startIndex={3} />
       </section>
     </>
