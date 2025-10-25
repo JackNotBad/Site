@@ -11,6 +11,7 @@ use App\Entity\Carousel;
 use App\Entity\PriceList;
 use App\Entity\SliderImage;
 use App\Entity\CarouselImage;
+use App\Entity\DetailsSectionImage;
 use App\Controller\Admin\UserCrudController;
 use Symfony\Component\HttpFoundation\Response;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -65,6 +66,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Sections', 'fas fa-list', Section::class);
         yield MenuItem::section("Composants d'images");
         yield MenuItem::linkToCrud('Images', 'fas fa-list', Image::class);
+        yield MenuItem::linkToCrud('Images des prestations', 'fas fa-list', DetailsSectionImage::class);
         yield MenuItem::linkToCrud('Carousel', 'fas fa-list', Carousel::class);
         yield MenuItem::linkToCrud('Images du Carousel', 'fas fa-list', CarouselImage::class);
         yield MenuItem::linkToCrud('Slides', 'fas fa-list', Slider::class);

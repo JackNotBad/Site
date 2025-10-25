@@ -79,7 +79,7 @@ export default function Accueil() {
       .flatMap(carouselItem => (carouselItem.images || []).map(img => img.url));
   }, [carousels]);
 
-  const getSectionByPosition = (pos) => sections.find((s) => s.position === pos);
+  const getSectionByPosition = (pos) => sections.find((sectionItem) => sectionItem.position === pos);
 
   if (isLoading) {
     return <div className="text-center py-8">Chargement en cours...</div>;

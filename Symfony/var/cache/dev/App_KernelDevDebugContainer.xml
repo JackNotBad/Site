@@ -440,6 +440,7 @@
       <parameter>ApiPlatform\Validator\Exception\ValidationException</parameter>
       <parameter>App\Entity\Carousel</parameter>
       <parameter>App\Entity\CarouselImage</parameter>
+      <parameter>App\Entity\DetailsSectionImage</parameter>
       <parameter>App\Entity\Image</parameter>
       <parameter>App\Entity\Message</parameter>
       <parameter>App\Entity\Page</parameter>
@@ -633,6 +634,14 @@
         <argument type="service" id=".service_locator.zHhPQcF.App\Controller\Admin\DashboardController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\DetailsSectionImageCrudController" class="App\Controller\Admin\DetailsSectionImageCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="ea.crud_controller"/>
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.OkS5_e6.App\Controller\Admin\DetailsSectionImageCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="ea.crud_controller"/>
@@ -724,6 +733,12 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Entity\DetailsSectionImage" class="App\Entity\DetailsSectionImage" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+      <tag name="container.excluded" source="by #[ApiResource] attribute"/>
+      <tag name="api_platform.resource"/>
+    </service>
     <service id="App\Entity\Image" class="App\Entity\Image" autowire="true" autoconfigure="true">
       <tag name="api_platform.resource"/>
       <tag name="container.excluded" source="by #[ApiResource] attribute"/>
@@ -780,6 +795,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\CarouselRepository" class="App\Repository\CarouselRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\DetailsSectionImageRepository" class="App\Repository\DetailsSectionImageRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -857,7 +876,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.gBAl1eH"/>
+      <argument type="service" id=".service_locator.3LvMSac"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -4118,7 +4137,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.gBAl1eH"/>
+      <argument type="service" id=".service_locator.3LvMSac"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -6127,7 +6146,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.XcXRtcZ"/>
+      <argument type="service" id=".service_locator.F.cT8pz"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -9205,6 +9224,7 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="annotated_app_entity_carousel_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_carousel_api_platform_doctrine_orm_filter_search_filter"/>
+        <argument key="annotated_app_entity_details_section_image_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_details_section_image_api_platform_doctrine_orm_filter_search_filter"/>
         <argument key="annotated_app_entity_page_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_page_api_platform_doctrine_orm_filter_search_filter"/>
         <argument key="annotated_app_entity_section_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_section_api_platform_doctrine_orm_filter_search_filter"/>
         <argument key="annotated_app_entity_slider_api_platform_doctrine_orm_filter_search_filter" type="service_closure" id="annotated_app_entity_slider_api_platform_doctrine_orm_filter_search_filter"/>
@@ -10229,6 +10249,16 @@
       <argument type="service" id="api_platform.api.identifiers_extractor" on-invalid="ignore"/>
       <argument type="service" id="api_platform.hydra.name_converter.hydra_prefix" on-invalid="ignore"/>
     </service>
+    <service id="annotated_app_entity_details_section_image_api_platform_doctrine_orm_filter_search_filter" class="ApiPlatform\Doctrine\Orm\Filter\SearchFilter" autowire="true">
+      <tag name="api_platform.filter"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="service" id="api_platform.symfony.iri_converter"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+      <argument>null</argument>
+      <argument type="service" id="api_platform.api.identifiers_extractor" on-invalid="ignore"/>
+      <argument type="service" id="api_platform.hydra.name_converter.hydra_prefix" on-invalid="ignore"/>
+    </service>
     <service id="annotated_app_entity_page_api_platform_doctrine_orm_filter_search_filter" class="ApiPlatform\Doctrine\Orm\Filter\SearchFilter" autowire="true">
       <tag name="api_platform.filter"/>
       <argument type="service" id="doctrine"/>
@@ -10271,6 +10301,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\DetailsSectionImageCrudController" class="App\Controller\Admin\DetailsSectionImageCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\DetailsSectionImageCrudController" class="App\Controller\Admin\DetailsSectionImageCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\DetailsSectionImageCrudController" class="App\Controller\Admin\DetailsSectionImageCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\DetailsSectionImageCrudController" class="App\Controller\Admin\DetailsSectionImageCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" abstract="true"/>
@@ -10315,6 +10349,8 @@
     <service id=".abstract.instanceof.App\Entity\Carousel" class="App\Entity\Carousel" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\CarouselImage.0.App\Entity\CarouselImage" class="App\Entity\CarouselImage" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\CarouselImage" class="App\Entity\CarouselImage" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\DetailsSectionImage.0.App\Entity\DetailsSectionImage" class="App\Entity\DetailsSectionImage" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\DetailsSectionImage" class="App\Entity\DetailsSectionImage" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Image.0.App\Entity\Image" class="App\Entity\Image" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Image" class="App\Entity\Image" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Message.0.App\Entity\Message" class="App\Entity\Message" autowire="true" abstract="true"/>
@@ -10337,6 +10373,8 @@
     <service id=".abstract.instanceof.App\Repository\CarouselImageRepository" class="App\Repository\CarouselImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CarouselRepository" class="App\Repository\CarouselRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CarouselRepository" class="App\Repository\CarouselRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DetailsSectionImageRepository" class="App\Repository\DetailsSectionImageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DetailsSectionImageRepository" class="App\Repository\DetailsSectionImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" abstract="true"/>
@@ -11472,6 +11510,132 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5FanY8e" method="withContext"/>
     </service>
+    <service id=".service_locator.OoSfY9L.App\Controller\Admin\DetailsSectionImageCrudController::configureCrud()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::configureCrud()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::configureCrud()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.OoSfY9L" method="withContext"/>
+    </service>
+    <service id=".service_locator.PE.ZUUL.App\Controller\Admin\DetailsSectionImageCrudController::configureAssets()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::configureAssets()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::configureAssets()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.PE.ZUUL" method="withContext"/>
+    </service>
+    <service id=".service_locator.T.Ra9lS.App\Controller\Admin\DetailsSectionImageCrudController::configureActions()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::configureActions()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::configureActions()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.T.Ra9lS" method="withContext"/>
+    </service>
+    <service id=".service_locator.CFbfVRp.App\Controller\Admin\DetailsSectionImageCrudController::configureFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::configureFilters()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::configureFilters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CFbfVRp" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::index()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::detail()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::detail()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::detail()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::edit()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::new()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::delete()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.oDo8ofG.App\Controller\Admin\DetailsSectionImageCrudController::batchDelete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::batchDelete()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::batchDelete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.oDo8ofG" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::autocomplete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::autocomplete()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::autocomplete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.kqcX6wc.App\Controller\Admin\DetailsSectionImageCrudController::createIndexQueryBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::createIndexQueryBuilder()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::createIndexQueryBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.kqcX6wc" method="withContext"/>
+    </service>
+    <service id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::renderFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::renderFilters()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::renderFilters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.IaSFwjD" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::updateEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::updateEntity()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::updateEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::persistEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::persistEntity()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::persistEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::deleteEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::deleteEntity()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::deleteEntity()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createEditForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::createEditForm()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::createEditForm()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CaejQBj" method="withContext"/>
+    </service>
+    <service id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createEditFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::createEditFormBuilder()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::createEditFormBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CaejQBj" method="withContext"/>
+    </service>
+    <service id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createNewForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::createNewForm()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::createNewForm()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CaejQBj" method="withContext"/>
+    </service>
+    <service id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createNewFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::createNewFormBuilder()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::createNewFormBuilder()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CaejQBj" method="withContext"/>
+    </service>
+    <service id=".service_locator.ib1WIGE.App\Controller\Admin\DetailsSectionImageCrudController::configureResponseParameters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController::configureResponseParameters()"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController::configureResponseParameters()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ib1WIGE" method="withContext"/>
+    </service>
     <service id=".service_locator.OoSfY9L.App\Controller\Admin\ImageCrudController::configureCrud()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ImageCrudController::configureCrud()"/>
       <argument>App\Controller\Admin\ImageCrudController::configureCrud()</argument>
@@ -12499,7 +12663,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.A84gqGd" method="withContext"/>
     </service>
-    <service id=".service_locator.gBAl1eH" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.3LvMSac" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -12549,6 +12713,27 @@
         <argument key="App\Controller\Admin\CarouselImageCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\CarouselImageCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\CarouselImageCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\CarouselImageCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\Admin\DashboardController::configureUserMenu" type="service_closure" id=".service_locator.5FanY8e.App\Controller\Admin\DashboardController::configureUserMenu()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\DetailsSectionImageCrudController::configureCrud()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\DetailsSectionImageCrudController::configureAssets()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\DetailsSectionImageCrudController::configureActions()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::configureFilters" type="service_closure" id=".service_locator.CFbfVRp.App\Controller\Admin\DetailsSectionImageCrudController::configureFilters()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::index" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::index()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::detail" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::detail()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::edit" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::edit()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::new" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::new()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::delete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::delete()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::batchDelete" type="service_closure" id=".service_locator.oDo8ofG.App\Controller\Admin\DetailsSectionImageCrudController::batchDelete()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::autocomplete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::autocomplete()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.kqcX6wc.App\Controller\Admin\DetailsSectionImageCrudController::createIndexQueryBuilder()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::renderFilters" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::renderFilters()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::updateEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::updateEntity()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::persistEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::persistEntity()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::deleteEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::deleteEntity()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::createEditForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createEditForm()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createEditFormBuilder()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createNewForm()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createNewFormBuilder()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\DetailsSectionImageCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\Admin\ImageCrudController::configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\ImageCrudController::configureCrud()"/>
         <argument key="App\Controller\Admin\ImageCrudController::persistEntity" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\Admin\ImageCrudController::persistEntity()"/>
         <argument key="App\Controller\Admin\ImageCrudController::updateEntity" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\Admin\ImageCrudController::updateEntity()"/>
@@ -12763,6 +12948,27 @@
         <argument key="App\Controller\Admin\CarouselImageCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\CarouselImageCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\CarouselImageCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\CarouselImageCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\Admin\DashboardController:configureUserMenu" type="service_closure" id=".service_locator.5FanY8e.App\Controller\Admin\DashboardController::configureUserMenu()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\DetailsSectionImageCrudController::configureCrud()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\DetailsSectionImageCrudController::configureAssets()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\DetailsSectionImageCrudController::configureActions()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:configureFilters" type="service_closure" id=".service_locator.CFbfVRp.App\Controller\Admin\DetailsSectionImageCrudController::configureFilters()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:index" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::index()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:detail" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::detail()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:edit" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::edit()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:new" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::new()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:delete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::delete()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:batchDelete" type="service_closure" id=".service_locator.oDo8ofG.App\Controller\Admin\DetailsSectionImageCrudController::batchDelete()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:autocomplete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::autocomplete()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.kqcX6wc.App\Controller\Admin\DetailsSectionImageCrudController::createIndexQueryBuilder()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:renderFilters" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\DetailsSectionImageCrudController::renderFilters()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:updateEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::updateEntity()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:persistEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::persistEntity()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:deleteEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\DetailsSectionImageCrudController::deleteEntity()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:createEditForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createEditForm()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createEditFormBuilder()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createNewForm()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\DetailsSectionImageCrudController::createNewFormBuilder()"/>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\DetailsSectionImageCrudController::configureResponseParameters()"/>
         <argument key="App\Controller\Admin\ImageCrudController:configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\ImageCrudController::configureCrud()"/>
         <argument key="App\Controller\Admin\ImageCrudController:persistEntity" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\Admin\ImageCrudController::persistEntity()"/>
         <argument key="App\Controller\Admin\ImageCrudController:updateEntity" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\Admin\ImageCrudController::updateEntity()"/>
@@ -13365,11 +13571,12 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.XcXRtcZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.F.cT8pz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CarouselImageRepository" type="service_closure" id="App\Repository\CarouselImageRepository"/>
         <argument key="App\Repository\CarouselRepository" type="service_closure" id="App\Repository\CarouselRepository"/>
+        <argument key="App\Repository\DetailsSectionImageRepository" type="service_closure" id="App\Repository\DetailsSectionImageRepository"/>
         <argument key="App\Repository\ImageRepository" type="service_closure" id="App\Repository\ImageRepository"/>
         <argument key="App\Repository\MessageRepository" type="service_closure" id="App\Repository\MessageRepository"/>
         <argument key="App\Repository\PageRepository" type="service_closure" id="App\Repository\PageRepository"/>
@@ -13627,6 +13834,7 @@
       <argument type="collection">
         <argument key="App\Controller\Admin\CarouselCrudController">App\Entity\Carousel</argument>
         <argument key="App\Controller\Admin\CarouselImageCrudController">App\Entity\CarouselImage</argument>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController">App\Entity\DetailsSectionImage</argument>
         <argument key="App\Controller\Admin\ImageCrudController">App\Entity\Image</argument>
         <argument key="App\Controller\Admin\MessageCrudController">App\Entity\Message</argument>
         <argument key="App\Controller\Admin\PageCrudController">App\Entity\Page</argument>
@@ -13639,6 +13847,7 @@
       <argument type="collection">
         <argument key="App\Controller\Admin\CarouselCrudController" type="string">5727e87</argument>
         <argument key="App\Controller\Admin\CarouselImageCrudController">7bbfa9f</argument>
+        <argument key="App\Controller\Admin\DetailsSectionImageCrudController">8a0b38d</argument>
         <argument key="App\Controller\Admin\ImageCrudController">06d9db2</argument>
         <argument key="App\Controller\Admin\MessageCrudController">8b3c783</argument>
         <argument key="App\Controller\Admin\PageCrudController">d06b327</argument>
@@ -13651,6 +13860,7 @@
       <argument type="collection">
         <argument key="App\Entity\Carousel">App\Controller\Admin\CarouselCrudController</argument>
         <argument key="App\Entity\CarouselImage">App\Controller\Admin\CarouselImageCrudController</argument>
+        <argument key="App\Entity\DetailsSectionImage">App\Controller\Admin\DetailsSectionImageCrudController</argument>
         <argument key="App\Entity\Image">App\Controller\Admin\ImageCrudController</argument>
         <argument key="App\Entity\Message">App\Controller\Admin\MessageCrudController</argument>
         <argument key="App\Entity\Page">App\Controller\Admin\PageCrudController</argument>
@@ -13663,6 +13873,7 @@
       <argument type="collection">
         <argument key="5727e87">App\Controller\Admin\CarouselCrudController</argument>
         <argument key="7bbfa9f">App\Controller\Admin\CarouselImageCrudController</argument>
+        <argument key="8a0b38d">App\Controller\Admin\DetailsSectionImageCrudController</argument>
         <argument key="06d9db2">App\Controller\Admin\ImageCrudController</argument>
         <argument key="8b3c783">App\Controller\Admin\MessageCrudController</argument>
         <argument key="d06b327">App\Controller\Admin\PageCrudController</argument>
@@ -13753,6 +13964,12 @@
       <argument>App\Controller\Admin\DashboardController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.zHhPQcF" method="withContext"/>
+    </service>
+    <service id=".service_locator.OkS5_e6.App\Controller\Admin\DetailsSectionImageCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DetailsSectionImageCrudController"/>
+      <argument>App\Controller\Admin\DetailsSectionImageCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.OkS5_e6" method="withContext"/>
     </service>
     <service id=".service_locator.OkS5_e6.App\Controller\Admin\ImageCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ImageCrudController"/>
@@ -14099,6 +14316,7 @@
           <argument>App\Controller\Admin\CarouselCrudController</argument>
           <argument>App\Controller\Admin\CarouselImageCrudController</argument>
           <argument>App\Controller\Admin\DashboardController</argument>
+          <argument>App\Controller\Admin\DetailsSectionImageCrudController</argument>
           <argument>App\Controller\Admin\ImageCrudController</argument>
           <argument>App\Controller\Admin\MessageCrudController</argument>
           <argument>App\Controller\Admin\PageCrudController</argument>
@@ -16060,7 +16278,7 @@
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="api_platform.name_converter" alias="api_platform.hydra.name_converter.hydra_prefix"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.gBAl1eH"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.3LvMSac"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -16085,7 +16303,7 @@
     <service id=".service_locator.kVuTj7R" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.58WvHxo" alias="service_locator_EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     <service id=".service_locator.9LJrHhf" alias="api_platform.serializer_locator"/>
-    <service id=".service_locator.pbeGbF0" alias="api_platform.filter_locator"/>
+    <service id=".service_locator.zjPDnCe" alias="api_platform.filter_locator"/>
     <service id=".service_locator.w2vsPuD" alias=".service_locator.dgARDkS"/>
     <service id="api_platform.metadata.resource.metadata_collection_factory.parameter.inner" alias="api_platform.metadata.resource.metadata_collection_factory.attributes"/>
     <service id="api_platform.validator.metadata.resource.metadata_collection_factory.parameter.inner" alias="api_platform.metadata.resource.metadata_collection_factory.parameter"/>

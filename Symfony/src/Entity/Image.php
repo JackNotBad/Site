@@ -47,6 +47,27 @@ class Image
     #[ORM\OneToMany(mappedBy: 'image', targetEntity: SliderImage::class, cascade: ['persist', 'remove'])]
     private Collection $sliderImages;
 
+    #[ORM\ManyToOne(inversedBy: 'Image')]
+    private ?DetailsSectionImage $detailsSectionImage = null;
+
+    /**
+     *
+     * @var UploadedFile|null
+     */
+    #[Assert\File(
+        maxSize: '8M',
+        mimeTypes: ['image/png', 'image/jpeg', 'image/webp', 'image/gif'],
+        mimeTypesMessage: 'Veuillez uploader une image valide (png, jpg, webp, gif).'
+    )]
+    private ?UploadedFile $file = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Paris'));
+        $this->carouselImages = new ArrayCollection();
+        $this->carouselImages = new ArrayCollection();
+    }
+
     public function getCarouselImages(): Collection
     {
         return $this->carouselImages;
@@ -94,24 +115,6 @@ class Image
         }
         return $this;
     }
-    /**
-     *
-     * @var UploadedFile|null
-     */
-    #[Assert\File(
-        maxSize: '8M',
-        mimeTypes: ['image/png', 'image/jpeg', 'image/webp', 'image/gif'],
-        mimeTypesMessage: 'Veuillez uploader une image valide (png, jpg, webp, gif).'
-    )]
-    private ?UploadedFile $file = null;
-
-    public function __construct()
-    {
-        $this->createdAt = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Paris'));
-        $this->carouselImages = new ArrayCollection();
-        $this->carouselImages = new ArrayCollection();
-    }
-
 
     public function getId(): ?int
     {
@@ -151,7 +154,6 @@ class Image
         return $this;
     }
 
-
     public function setFile(?UploadedFile $file): self
     {
         $this->file = $file;
@@ -180,5 +182,17 @@ class Image
         }
 
         return (string)($this->getId() ?? '');
+    }
+
+    public function getDetailsSectionImage(): ?DetailsSectionImage
+    {
+        return $this->detailsSectionImage;
+    }
+
+    public function setDetailsSectionImage(?DetailsSectionImage $detailsSectionImage): static
+    {
+        $this->detailsSectionImage = $detailsSectionImage;
+
+        return $this;
     }
 }

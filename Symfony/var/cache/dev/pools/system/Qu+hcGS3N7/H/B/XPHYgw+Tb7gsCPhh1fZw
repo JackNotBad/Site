@@ -86,6 +86,46 @@ return [PHP_INT_MAX, [
         'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController',
         'crudAction' => 'detail',
     ],
+    'admin_details_section_image_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_details_section_image_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_details_section_image_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_details_section_image_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_details_section_image_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_details_section_image_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_details_section_image_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_details_section_image_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController',
+        'crudAction' => 'detail',
+    ],
     'admin_image_index' => [
         'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
         'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController',

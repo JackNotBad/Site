@@ -10,6 +10,7 @@ export default function BlockSection({
   containerClass = "",
   imgClass = "",
   textClass = "",
+  children,
 }) {
 
   const baseContainer = `
@@ -42,14 +43,14 @@ export default function BlockSection({
             />
           )}
           <div className={`${baseTextClass} ${textClass}`}>
-            {title}
+            {children ?? <>{title}</>}
             <p>{parse(nettoyerTexte(text))}</p>
           </div>
         </>
       ) : (
         <>
           <div className={`${baseTextClass} ${textClass}`}>
-            {title}
+            {children ?? <>{title}</>}
             <p>{parse(nettoyerTexte(text))}</p>
           </div>
           {imgSrc && (

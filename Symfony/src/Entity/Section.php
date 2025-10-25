@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Entity\Page;
 use ApiPlatform\Metadata\Get;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
@@ -50,9 +52,17 @@ class Section
     #[Groups(['sections:item', 'sections:list'])]
     private ?Image $Image_Id = null;
 
+    /**
+     * @var Collection<int, DetailsSectionImage>
+     */
+    #[ORM\OneToMany(targetEntity: DetailsSectionImage::class, mappedBy: 'Section')]
+    #[Groups(['sections:item', 'sections:list'])]
+    private Collection $detailsSectionImages;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Paris'));
+        $this->detailsSectionImages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -128,6 +138,35 @@ class Section
     public function setImageId(?Image $Image_Id): static
     {
         $this->Image_Id = $Image_Id;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, DetailsSectionImage>
+     */
+    public function getDetailsSectionImages(): Collection
+    {
+        return $this->detailsSectionImages;
+    }
+
+    public function addDetailsSectionImage(DetailsSectionImage $detailsSectionImage): static
+    {
+        if (!$this->detailsSectionImages->contains($detailsSectionImage)) {
+            $this->detailsSectionImages->add($detailsSectionImage);
+            $detailsSectionImage->setSection($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDetailsSectionImage(DetailsSectionImage $detailsSectionImage): static
+    {
+        if ($this->detailsSectionImages->removeElement($detailsSectionImage)) {
+            if ($detailsSectionImage->getSection() === $this) {
+                $detailsSectionImage->setSection(null);
+            }
+        }
 
         return $this;
     }

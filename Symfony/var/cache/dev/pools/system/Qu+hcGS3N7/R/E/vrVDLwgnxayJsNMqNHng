@@ -25,6 +25,16 @@ return [PHP_INT_MAX, [
             'delete' => 'admin_carousel_image_delete',
             'detail' => 'admin_carousel_image_detail',
         ],
+        'App\\Controller\\Admin\\DetailsSectionImageCrudController' => [
+            'index' => 'admin_details_section_image_index',
+            'new' => 'admin_details_section_image_new',
+            'batchDelete' => 'admin_details_section_image_batch_delete',
+            'autocomplete' => 'admin_details_section_image_autocomplete',
+            'renderFilters' => 'admin_details_section_image_render_filters',
+            'edit' => 'admin_details_section_image_edit',
+            'delete' => 'admin_details_section_image_delete',
+            'detail' => 'admin_details_section_image_detail',
+        ],
         'App\\Controller\\Admin\\ImageCrudController' => [
             'index' => 'admin_image_index',
             'new' => 'admin_image_new',

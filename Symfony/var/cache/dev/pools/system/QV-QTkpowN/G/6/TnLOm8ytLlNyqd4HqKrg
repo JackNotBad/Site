@@ -13,6 +13,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
                     'ApiPlatform\\Validator\\Exception\\ValidationException',
                     'App\\Entity\\Carousel',
                     'App\\Entity\\CarouselImage',
+                    'App\\Entity\\DetailsSectionImage',
                     'App\\Entity\\Image',
                     'App\\Entity\\Message',
                     'App\\Entity\\Page',

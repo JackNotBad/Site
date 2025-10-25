@@ -18,6 +18,7 @@ export default function About() {
         return response.json();
       })
       .then((data) => {
+        console.log(data,"data")
         const formattedSections = data.member.map((item) => ({
           id: item.id,
           title: item.Title,
@@ -26,6 +27,7 @@ export default function About() {
           imgAlt: item.Image_Id?.alt,
           position: item.Position,
         }));
+        console.log(formattedSections, "formattedSections")
         setSections(formattedSections);
         setIsLoading(false);
       })
@@ -82,7 +84,7 @@ export default function About() {
     return <div className="text-center py-8">Chargement en cours...</div>;
   }
 
-  const getSectionByPosition = (pos) => sections.find((s) => s.position === pos);
+  const getSectionByPosition = (pos) => sections.find((sectionItem) => sectionItem.position === pos);
 
 return (
     <>
