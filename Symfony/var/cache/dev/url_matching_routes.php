@@ -116,47 +116,39 @@ return [
                                 .'|(?:\\.([^/]++))?(?'
                                     .'|(*:627)'
                                 .')'
-                                .'|/([^/\\.]++)(?:\\.([^/]++))?(?'
-                                    .'|(*:665)'
-                                .')'
                             .')'
                             .'|p(?'
                                 .'|ages(?'
-                                    .'|/([^/\\.]++)(?:\\.([^/]++))?(*:712)'
-                                    .'|(?:\\.([^/]++))?(*:735)'
+                                    .'|/([^/\\.]++)(?:\\.([^/]++))?(*:674)'
+                                    .'|(?:\\.([^/]++))?(*:697)'
                                 .')'
                                 .'|rice_lists(?'
-                                    .'|/([^/\\.]++)(?:\\.([^/]++))?(*:783)'
-                                    .'|(?:\\.([^/]++))?(?'
-                                        .'|(*:809)'
-                                    .')'
-                                    .'|/([^/\\.]++)(?:\\.([^/]++))?(?'
-                                        .'|(*:847)'
-                                    .')'
+                                    .'|/([^/\\.]++)(?:\\.([^/]++))?(*:745)'
+                                    .'|(?:\\.([^/]++))?(*:768)'
                                 .')'
                             .')'
                             .'|s(?'
                                 .'|ections(?'
-                                    .'|/([^/\\.]++)(?:\\.([^/]++))?(*:898)'
-                                    .'|(?:\\.([^/]++))?(*:921)'
+                                    .'|/([^/\\.]++)(?:\\.([^/]++))?(*:818)'
+                                    .'|(?:\\.([^/]++))?(*:841)'
                                 .')'
                                 .'|lider(?'
                                     .'|s(?'
-                                        .'|/([^/\\.]++)(?:\\.([^/]++))?(*:968)'
-                                        .'|(?:\\.([^/]++))?(*:991)'
+                                        .'|/([^/\\.]++)(?:\\.([^/]++))?(*:888)'
+                                        .'|(?:\\.([^/]++))?(*:911)'
                                     .')'
                                     .'|_images(?'
-                                        .'|/([^/\\.]++)(?:\\.([^/]++))?(*:1036)'
-                                        .'|(?:\\.([^/]++))?(*:1060)'
+                                        .'|/([^/\\.]++)(?:\\.([^/]++))?(*:956)'
+                                        .'|(?:\\.([^/]++))?(*:979)'
                                     .')'
                                 .')'
                             .')'
                             .'|users(?'
                                 .'|(?:\\.([^/]++))?(?'
-                                    .'|(*:1098)'
+                                    .'|(*:1016)'
                                 .')'
                                 .'|/([^/\\.]++)(?:\\.([^/]++))?(?'
-                                    .'|(*:1137)'
+                                    .'|(*:1055)'
                                 .')'
                             .')'
                         .')'
@@ -165,105 +157,105 @@ return [
                         .'|carousel(?'
                             .'|/([^/]++)(?'
                                 .'|/(?'
-                                    .'|edit(*:1189)'
-                                    .'|delete(*:1204)'
+                                    .'|edit(*:1107)'
+                                    .'|delete(*:1122)'
                                 .')'
-                                .'|(*:1214)'
+                                .'|(*:1132)'
                             .')'
                             .'|\\-image/([^/]++)(?'
                                 .'|/(?'
-                                    .'|edit(*:1251)'
-                                    .'|delete(*:1266)'
+                                    .'|edit(*:1169)'
+                                    .'|delete(*:1184)'
                                 .')'
-                                .'|(*:1276)'
+                                .'|(*:1194)'
                             .')'
                         .')'
                         .'|details\\-section\\-image/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:1330)'
-                                .'|delete(*:1345)'
+                                .'|edit(*:1248)'
+                                .'|delete(*:1263)'
                             .')'
-                            .'|(*:1355)'
+                            .'|(*:1273)'
                         .')'
                         .'|image/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:1390)'
-                                .'|delete(*:1405)'
+                                .'|edit(*:1308)'
+                                .'|delete(*:1323)'
                             .')'
-                            .'|(*:1415)'
+                            .'|(*:1333)'
                         .')'
                         .'|message/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:1452)'
-                                .'|delete(*:1467)'
+                                .'|edit(*:1370)'
+                                .'|delete(*:1385)'
                             .')'
-                            .'|(*:1477)'
+                            .'|(*:1395)'
                         .')'
                         .'|p(?'
                             .'|age/([^/]++)(?'
                                 .'|/(?'
-                                    .'|edit(*:1514)'
-                                    .'|delete(*:1529)'
+                                    .'|edit(*:1432)'
+                                    .'|delete(*:1447)'
                                 .')'
-                                .'|(*:1539)'
+                                .'|(*:1457)'
                             .')'
                             .'|rice\\-list/([^/]++)(?'
                                 .'|/(?'
-                                    .'|edit(*:1579)'
-                                    .'|delete(*:1594)'
+                                    .'|edit(*:1497)'
+                                    .'|delete(*:1512)'
                                 .')'
-                                .'|(*:1604)'
+                                .'|(*:1522)'
                             .')'
                         .')'
                         .'|s(?'
                             .'|ection/([^/]++)(?'
                                 .'|/(?'
-                                    .'|edit(*:1645)'
-                                    .'|delete(*:1660)'
+                                    .'|edit(*:1563)'
+                                    .'|delete(*:1578)'
                                 .')'
-                                .'|(*:1670)'
+                                .'|(*:1588)'
                             .')'
                             .'|lider(?'
                                 .'|/([^/]++)(?'
                                     .'|/(?'
-                                        .'|edit(*:1708)'
-                                        .'|delete(*:1723)'
+                                        .'|edit(*:1626)'
+                                        .'|delete(*:1641)'
                                     .')'
-                                    .'|(*:1733)'
+                                    .'|(*:1651)'
                                 .')'
                                 .'|\\-image/([^/]++)(?'
                                     .'|/(?'
-                                        .'|edit(*:1770)'
-                                        .'|delete(*:1785)'
+                                        .'|edit(*:1688)'
+                                        .'|delete(*:1703)'
                                     .')'
-                                    .'|(*:1795)'
+                                    .'|(*:1713)'
                                 .')'
                             .')'
                         .')'
                         .'|user/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:1831)'
-                                .'|delete(*:1846)'
+                                .'|edit(*:1749)'
+                                .'|delete(*:1764)'
                             .')'
-                            .'|(*:1856)'
+                            .'|(*:1774)'
                         .')'
                     .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:1899)'
-                    .'|wdt/([^/]++)(*:1920)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:1817)'
+                    .'|wdt/([^/]++)(*:1838)'
                     .'|profiler/(?'
-                        .'|font/([^/\\.]++)\\.woff2(*:1963)'
+                        .'|font/([^/\\.]++)\\.woff2(*:1881)'
                         .'|([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:2001)'
-                                .'|router(*:2016)'
+                                .'|search/results(*:1919)'
+                                .'|router(*:1934)'
                                 .'|exception(?'
-                                    .'|(*:2037)'
-                                    .'|\\.css(*:2051)'
+                                    .'|(*:1955)'
+                                    .'|\\.css(*:1969)'
                                 .')'
                             .')'
-                            .'|(*:2062)'
+                            .'|(*:1980)'
                         .')'
                     .')'
                 .')'
@@ -295,78 +287,67 @@ return [
             [['_route' => '_api_/messages{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Message', '_api_operation_name' => '_api_/messages{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_/messages{._format}_post', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Message', '_api_operation_name' => '_api_/messages{._format}_post', '_format' => null], ['_format'], ['POST' => 0], null, false, true, null],
         ],
-        665 => [
-            [['_route' => '_api_/messages/{id}{._format}_patch', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Message', '_api_operation_name' => '_api_/messages/{id}{._format}_patch', '_format' => null], ['id', '_format'], ['PATCH' => 0], null, false, true, null],
-            [['_route' => '_api_/messages/{id}{._format}_delete', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Message', '_api_operation_name' => '_api_/messages/{id}{._format}_delete', '_format' => null], ['id', '_format'], ['DELETE' => 0], null, false, true, null],
-        ],
-        712 => [[['_route' => '_api_/pages/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Page', '_api_operation_name' => '_api_/pages/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
-        735 => [[['_route' => '_api_/pages{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Page', '_api_operation_name' => '_api_/pages{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
-        783 => [[['_route' => '_api_/price_lists/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\PriceList', '_api_operation_name' => '_api_/price_lists/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
-        809 => [
-            [['_route' => '_api_/price_lists{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\PriceList', '_api_operation_name' => '_api_/price_lists{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null],
-            [['_route' => '_api_/price_lists{._format}_post', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\PriceList', '_api_operation_name' => '_api_/price_lists{._format}_post', '_format' => null], ['_format'], ['POST' => 0], null, false, true, null],
-        ],
-        847 => [
-            [['_route' => '_api_/price_lists/{id}{._format}_patch', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\PriceList', '_api_operation_name' => '_api_/price_lists/{id}{._format}_patch', '_format' => null], ['id', '_format'], ['PATCH' => 0], null, false, true, null],
-            [['_route' => '_api_/price_lists/{id}{._format}_delete', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\PriceList', '_api_operation_name' => '_api_/price_lists/{id}{._format}_delete', '_format' => null], ['id', '_format'], ['DELETE' => 0], null, false, true, null],
-        ],
-        898 => [[['_route' => '_api_/sections/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Section', '_api_operation_name' => '_api_/sections/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
-        921 => [[['_route' => '_api_/sections{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Section', '_api_operation_name' => '_api_/sections{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
-        968 => [[['_route' => '_api_/sliders/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Slider', '_api_operation_name' => '_api_/sliders/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
-        991 => [[['_route' => '_api_/sliders{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Slider', '_api_operation_name' => '_api_/sliders{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
-        1036 => [[['_route' => '_api_/slider_images/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\SliderImage', '_api_operation_name' => '_api_/slider_images/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
-        1060 => [[['_route' => '_api_/slider_images{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\SliderImage', '_api_operation_name' => '_api_/slider_images{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
-        1098 => [
+        674 => [[['_route' => '_api_/pages/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Page', '_api_operation_name' => '_api_/pages/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
+        697 => [[['_route' => '_api_/pages{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Page', '_api_operation_name' => '_api_/pages{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
+        745 => [[['_route' => '_api_/price_lists/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\PriceList', '_api_operation_name' => '_api_/price_lists/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
+        768 => [[['_route' => '_api_/price_lists{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\PriceList', '_api_operation_name' => '_api_/price_lists{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
+        818 => [[['_route' => '_api_/sections/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Section', '_api_operation_name' => '_api_/sections/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
+        841 => [[['_route' => '_api_/sections{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Section', '_api_operation_name' => '_api_/sections{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
+        888 => [[['_route' => '_api_/sliders/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Slider', '_api_operation_name' => '_api_/sliders/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
+        911 => [[['_route' => '_api_/sliders{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Slider', '_api_operation_name' => '_api_/sliders{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
+        956 => [[['_route' => '_api_/slider_images/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\SliderImage', '_api_operation_name' => '_api_/slider_images/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
+        979 => [[['_route' => '_api_/slider_images{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\SliderImage', '_api_operation_name' => '_api_/slider_images{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null]],
+        1016 => [
             [['_route' => '_api_/users{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\User', '_api_operation_name' => '_api_/users{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_/users{._format}_post', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\User', '_api_operation_name' => '_api_/users{._format}_post', '_format' => null], ['_format'], ['POST' => 0], null, false, true, null],
         ],
-        1137 => [
+        1055 => [
             [['_route' => '_api_/users/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\User', '_api_operation_name' => '_api_/users/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_/users/{id}{._format}_put', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\User', '_api_operation_name' => '_api_/users/{id}{._format}_put', '_format' => null], ['id', '_format'], ['PUT' => 0], null, false, true, null],
             [['_route' => '_api_/users/{id}{._format}_patch', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\User', '_api_operation_name' => '_api_/users/{id}{._format}_patch', '_format' => null], ['id', '_format'], ['PATCH' => 0], null, false, true, null],
             [['_route' => '_api_/users/{id}{._format}_delete', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\User', '_api_operation_name' => '_api_/users/{id}{._format}_delete', '_format' => null], ['id', '_format'], ['DELETE' => 0], null, false, true, null],
         ],
-        1189 => [[['_route' => 'admin_carousel_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1204 => [[['_route' => 'admin_carousel_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1214 => [[['_route' => 'admin_carousel_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1251 => [[['_route' => 'admin_carousel_image_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselImageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1266 => [[['_route' => 'admin_carousel_image_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselImageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1276 => [[['_route' => 'admin_carousel_image_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselImageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1330 => [[['_route' => 'admin_details_section_image_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1345 => [[['_route' => 'admin_details_section_image_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1355 => [[['_route' => 'admin_details_section_image_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1390 => [[['_route' => 'admin_image_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\ImageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1405 => [[['_route' => 'admin_image_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\ImageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1415 => [[['_route' => 'admin_image_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\ImageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1452 => [[['_route' => 'admin_message_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\MessageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1467 => [[['_route' => 'admin_message_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\MessageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1477 => [[['_route' => 'admin_message_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\MessageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1514 => [[['_route' => 'admin_page_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1529 => [[['_route' => 'admin_page_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1539 => [[['_route' => 'admin_page_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1579 => [[['_route' => 'admin_price_list_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PriceListCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1594 => [[['_route' => 'admin_price_list_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PriceListCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1604 => [[['_route' => 'admin_price_list_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PriceListCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1645 => [[['_route' => 'admin_section_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SectionCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1660 => [[['_route' => 'admin_section_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SectionCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1670 => [[['_route' => 'admin_section_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SectionCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1708 => [[['_route' => 'admin_slider_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1723 => [[['_route' => 'admin_slider_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1733 => [[['_route' => 'admin_slider_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1770 => [[['_route' => 'admin_slider_image_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderImageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1785 => [[['_route' => 'admin_slider_image_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderImageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1795 => [[['_route' => 'admin_slider_image_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderImageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1831 => [[['_route' => 'admin_user_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\UserCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        1846 => [[['_route' => 'admin_user_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\UserCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        1856 => [[['_route' => 'admin_user_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\UserCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        1899 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        1920 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        1963 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
-        2001 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        2016 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        2037 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        2051 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        2062 => [
+        1107 => [[['_route' => 'admin_carousel_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1122 => [[['_route' => 'admin_carousel_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1132 => [[['_route' => 'admin_carousel_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1169 => [[['_route' => 'admin_carousel_image_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselImageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1184 => [[['_route' => 'admin_carousel_image_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselImageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1194 => [[['_route' => 'admin_carousel_image_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\CarouselImageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\CarouselImageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1248 => [[['_route' => 'admin_details_section_image_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1263 => [[['_route' => 'admin_details_section_image_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1273 => [[['_route' => 'admin_details_section_image_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\DetailsSectionImageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1308 => [[['_route' => 'admin_image_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\ImageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1323 => [[['_route' => 'admin_image_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\ImageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1333 => [[['_route' => 'admin_image_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\ImageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ImageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1370 => [[['_route' => 'admin_message_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\MessageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1385 => [[['_route' => 'admin_message_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\MessageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1395 => [[['_route' => 'admin_message_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\MessageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\MessageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1432 => [[['_route' => 'admin_page_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1447 => [[['_route' => 'admin_page_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1457 => [[['_route' => 'admin_page_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1497 => [[['_route' => 'admin_price_list_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PriceListCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1512 => [[['_route' => 'admin_price_list_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PriceListCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1522 => [[['_route' => 'admin_price_list_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\PriceListCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\PriceListCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1563 => [[['_route' => 'admin_section_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SectionCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1578 => [[['_route' => 'admin_section_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SectionCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1588 => [[['_route' => 'admin_section_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SectionCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SectionCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1626 => [[['_route' => 'admin_slider_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1641 => [[['_route' => 'admin_slider_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1651 => [[['_route' => 'admin_slider_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1688 => [[['_route' => 'admin_slider_image_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderImageCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1703 => [[['_route' => 'admin_slider_image_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderImageCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1713 => [[['_route' => 'admin_slider_image_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\SliderImageCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\SliderImageCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1749 => [[['_route' => 'admin_user_edit', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\UserCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        1764 => [[['_route' => 'admin_user_delete', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\UserCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        1774 => [[['_route' => 'admin_user_detail', '_locale' => 'en', '_controller' => 'App\\Controller\\Admin\\UserCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        1817 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        1838 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        1881 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
+        1919 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        1934 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        1955 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        1969 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        1980 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -31,6 +31,7 @@ class Page
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['page:item', 'page:list','carousel:item', 'carousel:list'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Section from "../components/Sections";
 import Modal from "../components/Modal";
+import { backPublicPath } from "../utils";
 
 export default function Prestations() {
   const [sections, setSections] = useState([]);
@@ -18,16 +19,35 @@ export default function Prestations() {
         return response.json();
       })
       .then((data) => {
-        console.log(data, "data prestations")
-        const formattedSections = data.member.map((item) => ({
-          id: item.id,
-          title: item.Title,
-          text: item.Text,
-          imgSrc: item.Image_Id?.url || null,
-          imgAlt: item.Image_Id?.alt || "",
-          position: item.Position,
-          details: (item.detailsSectionImages || []).map((d) => d.image?.url || d),
-        }));
+        const formattedSections = data.member.map((item) => {
+          const rawDetails = item.detailsSectionImages || [];
+
+          const details = rawDetails
+            .flatMap((detail) => {
+              const imgs = Array.isArray(detail?.Image) ? detail.Image
+                        : detail?.Image ? [detail.Image]
+                        : [];
+
+              return imgs.map((img) => img?.url).filter(Boolean);
+            })
+            .map((url) => String(url))
+            .map((url) =>
+              /^https?:\/\//i.test(url)
+                ? url
+                : `${backPublicPath}${url.replace(/^\//, "")}`
+            );
+
+          return {
+            id: item.id,
+            title: item.Title,
+            text: item.Text,
+            imgSrc: item.Image_Id?.url || item.Image_Id || null,
+            imgAlt: item.Image_Id?.alt || "",
+            position: item.Position,
+            details,
+          };
+        });
+
         setSections(formattedSections);
         setIsLoading(false);
       })
@@ -49,29 +69,19 @@ export default function Prestations() {
   return (
     <div>
       {sections.map((s, index) => (
-        <section key={s.id} className="py-12">
-          {/* utilise le composant Section */}
+        <section key={s.id ?? index}>
           <Section
-            title={<h2 className="text-xl font-semibold mb-4">{s.title}</h2>}
+            title={<h2>{s.title}</h2>}
             text={s.text}
             imgSrc={s.imgSrc}
             imgAlt={s.imgAlt}
             imgFirst={index % 2 === 0}
-            containerClass="items-center"
-            imgClass="max-w-135"
-            textClass="lg:max-w-135"
+            containerClass=""
+            imgClass=""
+            textClass=""
+            details={s.details}
+            onOpenDetails={() => openModal(s.details)}
           />
-          {/* bouton Réalisations si details présents */}
-          {s.details && s.details.length > 0 && (
-            <div className="text-center mt-4">
-              <button
-                onClick={() => openModal(s.details)}
-                className="inline-block max-w-28 mt-2 bg-[var(--orange)] text-white px-4 py-2 rounded shadow hover:bg-[var(--pink)] transition"
-              >
-                Réalisations
-              </button>
-            </div>
-          )}
         </section>
       ))}
 

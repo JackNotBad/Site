@@ -17,6 +17,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
                     'Page_Id',
                     'Image_Id',
                     'detailsSectionImages',
+                    'priceLists',
                     'title',
                     'text',
                     'position',

@@ -16,6 +16,8 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
                     'AlreadyRead',
                     'User_Id',
                     'Page_Id',
+                    'name',
+                    'email',
                     'alreadyRead',
                     'userId',
                     'pageId',

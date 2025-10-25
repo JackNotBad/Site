@@ -30,6 +30,7 @@ class Section extends \App\Entity\Section implements \Doctrine\ORM\Proxy\Interna
         "\0".parent::class."\0".'createdAt' => [parent::class, 'createdAt', null, 16],
         "\0".parent::class."\0".'detailsSectionImages' => [parent::class, 'detailsSectionImages', null, 16],
         "\0".parent::class."\0".'id' => [parent::class, 'id', null, 16],
+        "\0".parent::class."\0".'priceLists' => [parent::class, 'priceLists', null, 16],
         'Image_Id' => [parent::class, 'Image_Id', null, 16],
         'Page_Id' => [parent::class, 'Page_Id', null, 16],
         'Position' => [parent::class, 'Position', null, 16],
@@ -38,6 +39,7 @@ class Section extends \App\Entity\Section implements \Doctrine\ORM\Proxy\Interna
         'createdAt' => [parent::class, 'createdAt', null, 16],
         'detailsSectionImages' => [parent::class, 'detailsSectionImages', null, 16],
         'id' => [parent::class, 'id', null, 16],
+        'priceLists' => [parent::class, 'priceLists', null, 16],
     ];
 
     public function __isInitialized(): bool

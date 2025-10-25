@@ -73,8 +73,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Image des Slides', 'fas fa-list', SliderImage::class);
         yield MenuItem::section('Messages');
         yield MenuItem::linkToCrud('Messages', 'fas fa-list', Message::class);
-        yield MenuItem::section('Tarfis');
-        yield MenuItem::linkToCrud('Gérer les tarfis', 'fas fa-list', PriceList::class);
+        yield MenuItem::section('Tarifs');
+        yield MenuItem::linkToCrud('Gérer les tarifs', 'fas fa-list', PriceList::class);
         // MenuItem::linkToCrud('Blog Posts', 'fa fa-file-text', BlogPost::class),
         // MenuItem::section('Users'),
         // MenuItem::linkToCrud('Comments', 'fa fa-comment', Comment::class),

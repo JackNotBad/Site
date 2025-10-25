@@ -27,6 +27,7 @@ class Section
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['sections:item', 'sections:list'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -59,15 +60,32 @@ class Section
     #[Groups(['sections:item', 'sections:list'])]
     private Collection $detailsSectionImages;
 
+    /**
+     * @var Collection<int, PriceList>
+     */
+    #[ORM\OneToMany(mappedBy: 'section', targetEntity: PriceList::class)]
+    private Collection $priceLists;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Paris'));
         $this->detailsSectionImages = new ArrayCollection();
+        $this->priceLists = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getPriceLists(): Collection 
+    { 
+        return $this->priceLists; 
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->getTitle();
     }
 
     public function getTitle(): ?string

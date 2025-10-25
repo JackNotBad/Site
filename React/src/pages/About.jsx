@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import Carousel from "../components/Carousel";
 import Section from "../components/Sections";
-import React from "react";
 import { backPublicPath } from '../utils';
 
 

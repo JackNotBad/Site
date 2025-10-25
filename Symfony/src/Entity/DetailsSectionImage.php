@@ -27,7 +27,7 @@ class DetailsSectionImage
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['sections:item', 'sections:list'])]
+    #[Groups(['sections:item', 'sections:list','detailsImage:item','detailsImage:list'])]
     private ?int $id = null;
 
     #[ORM\Column(nullable: true)]

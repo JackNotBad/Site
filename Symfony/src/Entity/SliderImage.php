@@ -20,8 +20,10 @@ use Symfony\Component\Serializer\Attribute\Groups;
 #[ORM\Entity(repositoryClass: SliderImageRepository::class)]
 class SliderImage
 {
-    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
-    #[Groups(['sliders:list'])]
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    #[Groups(['sections:item', 'sections:list'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'integer')]    

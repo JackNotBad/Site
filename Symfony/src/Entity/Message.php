@@ -2,36 +2,61 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Post;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\MessageRepository;
+use ApiPlatform\Metadata\GetCollection;
+use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource]
+#[ApiResource(
+    operations: [
+        new Get(normalizationContext: ['groups' => 'message:item']),
+        new GetCollection(normalizationContext: ['groups' => 'message:list']),
+        new Post(denormalizationContext: ['groups' => 'post:message:item']),
+    ],
+)]
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
 class Message
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['message:item', 'message:list','post:message:item'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['message:item', 'message:list','post:message:item'])]
     private ?string $subject = null;
 
     #[ORM\Column(length: 1200)]
+    #[Groups(['message:item', 'message:list','post:message:item'])]
     private ?string $content = null;
 
     #[ORM\Column]
+    #[Groups(['message:item', 'message:list','post:message:item'])]
     private ?\DateTimeImmutable $sendAt = null;
 
     #[ORM\Column]
-    private ?bool $AlreadyRead = null;
+    #[Groups(['message:item', 'message:list','post:message:item'])]
+    private ?bool $AlreadyRead = false;
 
     #[ORM\ManyToOne(inversedBy: 'messages')]
+    #[Groups(['message:item', 'message:list','post:message:item'])]
     private ?User $User_Id = null;
 
     #[ORM\ManyToOne(inversedBy: 'messages')]
+    #[Groups(['message:item', 'message:list','post:message:item'])]
     private ?Page $Page_Id = null;
+
+    #[ORM\Column(length: 255)]
+    #[Groups(['message:item', 'message:list','post:message:item'])]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 255)]
+    #[Groups(['message:item', 'message:list','post:message:item'])]
+    private ?string $email = null;
 
     public function __construct()
     {
@@ -111,6 +136,30 @@ class Message
     public function setPageId(?Page $Page_Id): static
     {
         $this->Page_Id = $Page_Id;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): static
+    {
+        $this->email = $email;
 
         return $this;
     }

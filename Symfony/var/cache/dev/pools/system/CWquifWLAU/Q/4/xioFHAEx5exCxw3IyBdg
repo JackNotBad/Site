@@ -9,6 +9,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
         'ApiPlatform\\Metadata\\Property\\PropertyNameCollection' => [
             'properties' => [
                 [
+                    'id',
                     'Title',
                     'Text',
                     'Position',

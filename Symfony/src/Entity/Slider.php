@@ -27,8 +27,10 @@ use Symfony\Component\Serializer\Attribute\Groups;
 #[ApiFilter(SearchFilter::class)]
 class Slider
 {
-    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
-    #[Groups(['sliders:item', 'sliders:list'])]
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    #[Groups(['sliders:item', 'sliders:list','sections:item', 'sections:list'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -43,7 +45,6 @@ class Slider
     /**
      * @var Collection<int, SliderImage>
      */
-    // #[AppAssert\ImagesCount(expectedCount: 5, message: 'Le slider doit contenir exactement %expected% images. Actuellement : %count%.')]
     #[ORM\OneToMany(mappedBy: 'slider', targetEntity: SliderImage::class, cascade: ['persist','remove'], orphanRemoval: true)]
     #[Groups(['sliders:item', 'sliders:list'])]
     private Collection $images;

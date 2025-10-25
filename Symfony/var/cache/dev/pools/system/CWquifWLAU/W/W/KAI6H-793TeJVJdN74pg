@@ -39,7 +39,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
                 null,
             ],
             'default' => [
-                null,
+                false,
             ],
             'example' => [
                 null,
@@ -76,6 +76,7 @@ return [PHP_INT_MAX, new class() implements \Symfony\Component\Cache\Traits\Cach
             ],
             'schema' => [
                 [
+                    'default' => false,
                     'type' => 'boolean',
                 ],
             ],

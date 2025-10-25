@@ -20,8 +20,10 @@ use Symfony\Component\Serializer\Attribute\Groups;
 #[ORM\Entity(repositoryClass: CarouselImageRepository::class)]
 class CarouselImage
 {
-    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
-    #[Groups(['carousel:item','carousel:list'])]
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    #[Groups(['carousel:item','carousel:list','carouselImage:item','carouselImage:list'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'integer')]    
