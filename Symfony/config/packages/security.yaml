@@ -37,7 +37,7 @@ security:
                 login_path: app_login
                 check_path: app_login
             logout:
-                path: /logout
+                path: app_logout
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
@@ -50,7 +50,7 @@ security:
         # login_check must be anonymous so the front can obtain a token
         - { path: ^/api/login_check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/api, roles: ROLE_USER }
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
 
 when@test:
     security:
