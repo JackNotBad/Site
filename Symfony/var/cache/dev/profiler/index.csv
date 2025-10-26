@@ -3873,3 +3873,7 @@ cf6429,127.0.0.1,GET,https://localhost:8000/admin/price-list,1761430706,,200,req
 aa393b,127.0.0.1,GET,https://localhost:8000/admin/price-list/1/edit,1761430715,,200,request
 38fd71,127.0.0.1,GET,https://localhost:8000/admin,1761430788,,302,request
 62262b,127.0.0.1,GET,https://localhost:8000/admin/user,1761430789,,200,request
+dc0a1c,127.0.0.1,GET,https://127.0.0.1:8000/admin,1761493984,,302,request
+203625,127.0.0.1,GET,https://127.0.0.1:8000/admin/user,1761493989,,200,request
+cf45da,127.0.0.1,GET,https://127.0.0.1:8000/signin,1761495637,,200,request
+edf2dc,127.0.0.1,POST,https://127.0.0.1:8000/signin,1761495650,,200,request
