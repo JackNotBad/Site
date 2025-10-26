@@ -793,6 +793,10 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Entity\RefreshToken" class="App\Entity\RefreshToken" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\Entity\Section" class="App\Entity\Section" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
@@ -845,6 +849,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\PriceListRepository" class="App\Repository\PriceListRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\RefreshTokenRepository" class="App\Repository\RefreshTokenRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -6168,7 +6176,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.F.cT8pz"/>
+      <argument type="service" id=".service_locator.hBm3b0k"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -10400,6 +10408,8 @@
     <service id=".abstract.instanceof.App\Entity\Page" class="App\Entity\Page" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\PriceList.0.App\Entity\PriceList" class="App\Entity\PriceList" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\PriceList" class="App\Entity\PriceList" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\RefreshToken.0.App\Entity\RefreshToken" class="App\Entity\RefreshToken" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\RefreshToken" class="App\Entity\RefreshToken" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Section.0.App\Entity\Section" class="App\Entity\Section" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Section" class="App\Entity\Section" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Slider.0.App\Entity\Slider" class="App\Entity\Slider" autowire="true" abstract="true"/>
@@ -10424,6 +10434,8 @@
     <service id=".abstract.instanceof.App\Repository\PageRepository" class="App\Repository\PageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PriceListRepository" class="App\Repository\PriceListRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PriceListRepository" class="App\Repository\PriceListRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RefreshTokenRepository" class="App\Repository\RefreshTokenRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RefreshTokenRepository" class="App\Repository\RefreshTokenRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SectionRepository" class="App\Repository\SectionRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SectionRepository" class="App\Repository\SectionRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SliderImageRepository" class="App\Repository\SliderImageRepository" autowire="true" abstract="true"/>
@@ -13560,7 +13572,7 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.F.cT8pz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.hBm3b0k" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CarouselImageRepository" type="service_closure" id="App\Repository\CarouselImageRepository"/>
@@ -13570,6 +13582,7 @@
         <argument key="App\Repository\MessageRepository" type="service_closure" id="App\Repository\MessageRepository"/>
         <argument key="App\Repository\PageRepository" type="service_closure" id="App\Repository\PageRepository"/>
         <argument key="App\Repository\PriceListRepository" type="service_closure" id="App\Repository\PriceListRepository"/>
+        <argument key="App\Repository\RefreshTokenRepository" type="service_closure" id="App\Repository\RefreshTokenRepository"/>
         <argument key="App\Repository\SectionRepository" type="service_closure" id="App\Repository\SectionRepository"/>
         <argument key="App\Repository\SliderImageRepository" type="service_closure" id="App\Repository\SliderImageRepository"/>
         <argument key="App\Repository\SliderRepository" type="service_closure" id="App\Repository\SliderRepository"/>
