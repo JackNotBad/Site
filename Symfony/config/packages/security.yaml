@@ -14,22 +14,21 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        login:
-            pattern: ^/api/login
-            stateless: true
-            # anonymous: true
-
         api:
             pattern: ^/api
             stateless: true
             provider: app_user_provider
-            # use Lexik JWT authenticator
-            # lexik_jwt:
-            #     authorization_header:
-            #         enabled: true
-            #         prefix: Bearer
-            #     throw_exceptions: false
 
+            # endpoint pour récupérer le token (json_login)
+            json_login:
+                check_path: /api/login_check
+                username_path: email
+                password_path: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+            # Validation du JWT pour les requêtes ultérieures
+            jwt: ~
         main:
             lazy: true
             provider: app_user_provider
@@ -47,10 +46,8 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # login_check must be anonymous so the front can obtain a token
-        - { path: ^/api/login_check, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        # - { path: ^/api, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 
 when@test:
     security:
