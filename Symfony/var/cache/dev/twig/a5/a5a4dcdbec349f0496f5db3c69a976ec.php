@@ -97,18 +97,9 @@ class __TwigTemplate_691ad4cd1bc31319e994681876d5f8be extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 7
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 7, $this->source); })()), "html", null, true);
-        yield "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/wamp64/www/Mspr2/Symfony/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/wamp64/www/Mspr2/Symfony/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+        yield "    <a href=\"";
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+        yield "\" class=\"btn btn-primary\">Accéder à l'administration</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -140,7 +131,7 @@ class __TwigTemplate_691ad4cd1bc31319e994681876d5f8be extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -150,15 +141,7 @@ class __TwigTemplate_691ad4cd1bc31319e994681876d5f8be extends Template
 {% block title %}Admin Canopées{% endblock %}
 
 {% block body %}
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/wamp64/www/Mspr2/Symfony/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/wamp64/www/Mspr2/Symfony/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+    <a href=\"{{ path('admin') }}\" class=\"btn btn-primary\">Accéder à l'administration</a>
 {% endblock %}
 ", "home/index.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\templates\\home\\index.html.twig");
     }

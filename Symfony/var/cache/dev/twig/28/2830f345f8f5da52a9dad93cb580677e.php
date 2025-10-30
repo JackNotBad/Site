@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* @EasyAdmin/components/ActionMenu/ActionList.html.twig */
+/* @ea/components/ActionMenu/ActionList.html.twig */
 class __TwigTemplate_2a1c9f3a7d123ff31ef727c4c31fc605 extends Template
 {
     private Source $source;
@@ -40,15 +40,15 @@ class __TwigTemplate_2a1c9f3a7d123ff31ef727c4c31fc605 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu/ActionList.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu/ActionList.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu/ActionList.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu/ActionList.html.twig"));
 
         // line 1
         $propsNames = [];        if (isset($context['__props']['hasSubmenus'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "hasSubmenus" in template "@EasyAdmin/components/ActionMenu/ActionList.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "hasSubmenus" in template "@ea/components/ActionMenu/ActionList.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'hasSubmenus';        
         $context['attributes'] = $context['attributes']->remove('hasSubmenus');        
@@ -117,7 +117,7 @@ unset($context[$key]);
      */
     public function getTemplateName(): string
     {
-        return "@EasyAdmin/components/ActionMenu/ActionList.html.twig";
+        return "@ea/components/ActionMenu/ActionList.html.twig";
     }
 
     /**
@@ -150,6 +150,6 @@ unset($context[$key]);
 <ul {{ attributes.defaults({class: css_class}) }}>
     {% block content %}{% endblock %}
 </ul>
-", "@EasyAdmin/components/ActionMenu/ActionList.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\ActionMenu\\ActionList.html.twig");
+", "@ea/components/ActionMenu/ActionList.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\ActionMenu\\ActionList.html.twig");
     }
 }

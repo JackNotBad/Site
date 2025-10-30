@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* @EasyAdmin/components/ActionMenu/ActionList/Item.html.twig */
+/* @ea/components/ActionMenu/ActionList/Item.html.twig */
 class __TwigTemplate_bc8f4a7e2cf100fd701584ec26313431 extends Template
 {
     private Source $source;
@@ -39,15 +39,15 @@ class __TwigTemplate_bc8f4a7e2cf100fd701584ec26313431 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu/ActionList/Item.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu/ActionList/Item.html.twig"));
 
         // line 1
         $propsNames = [];        if (isset($context['__props']['label'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "label" in template "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "label" in template "@ea/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'label';        
         $context['attributes'] = $context['attributes']->remove('label');        
@@ -58,7 +58,7 @@ class __TwigTemplate_bc8f4a7e2cf100fd701584ec26313431 extends Template
         }
         if (isset($context['__props']['renderLabelRaw'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "renderLabelRaw" in template "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "renderLabelRaw" in template "@ea/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'renderLabelRaw';        
         $context['attributes'] = $context['attributes']->remove('renderLabelRaw');        
@@ -69,7 +69,7 @@ class __TwigTemplate_bc8f4a7e2cf100fd701584ec26313431 extends Template
         }
         if (isset($context['__props']['icon'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "icon" in template "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "icon" in template "@ea/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'icon';        
         $context['attributes'] = $context['attributes']->remove('icon');        
@@ -80,7 +80,7 @@ class __TwigTemplate_bc8f4a7e2cf100fd701584ec26313431 extends Template
         }
         if (isset($context['__props']['url'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "url" in template "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "url" in template "@ea/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'url';        
         $context['attributes'] = $context['attributes']->remove('url');        
@@ -91,7 +91,7 @@ class __TwigTemplate_bc8f4a7e2cf100fd701584ec26313431 extends Template
         }
         if (isset($context['__props']['htmlAttributes'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "htmlAttributes" in template "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "htmlAttributes" in template "@ea/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'htmlAttributes';        
         $context['attributes'] = $context['attributes']->remove('htmlAttributes');        
@@ -102,7 +102,7 @@ class __TwigTemplate_bc8f4a7e2cf100fd701584ec26313431 extends Template
         }
         if (isset($context['__props']['renderAsForm'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "renderAsForm" in template "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "renderAsForm" in template "@ea/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'renderAsForm';        
         $context['attributes'] = $context['attributes']->remove('renderAsForm');        
@@ -113,7 +113,7 @@ class __TwigTemplate_bc8f4a7e2cf100fd701584ec26313431 extends Template
         }
         if (isset($context['__props']['showBlankIcons'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "showBlankIcons" in template "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "showBlankIcons" in template "@ea/components/ActionMenu/ActionList/Item.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'showBlankIcons';        
         $context['attributes'] = $context['attributes']->remove('showBlankIcons');        
@@ -217,7 +217,7 @@ unset($context[$key]);
      */
     public function getTemplateName(): string
     {
-        return "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig";
+        return "@ea/components/ActionMenu/ActionList/Item.html.twig";
     }
 
     /**
@@ -270,6 +270,6 @@ unset($context[$key]);
         {% if label is not empty %}<span {{ attributes.nested('label') }}>{{ renderLabelRaw ? label|raw : label }}</span>{% endif %}
     </a>
 </li>
-", "@EasyAdmin/components/ActionMenu/ActionList/Item.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\ActionMenu\\ActionList\\Item.html.twig");
+", "@ea/components/ActionMenu/ActionList/Item.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\ActionMenu\\ActionList\\Item.html.twig");
     }
 }

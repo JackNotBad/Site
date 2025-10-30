@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* @EasyAdmin/components/Button.html.twig */
+/* @ea/components/Button.html.twig */
 class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
 {
     private Source $source;
@@ -39,15 +39,15 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/Button.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/Button.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/Button.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/Button.html.twig"));
 
         // line 1
         $propsNames = [];        if (isset($context['__props']['variant'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "variant" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "variant" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'variant';        
         $context['attributes'] = $context['attributes']->remove('variant');        
@@ -58,7 +58,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['isInvisible'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "isInvisible" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "isInvisible" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'isInvisible';        
         $context['attributes'] = $context['attributes']->remove('isInvisible');        
@@ -69,7 +69,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['isBlock'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "isBlock" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "isBlock" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'isBlock';        
         $context['attributes'] = $context['attributes']->remove('isBlock');        
@@ -80,7 +80,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['size'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "size" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "size" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'size';        
         $context['attributes'] = $context['attributes']->remove('size');        
@@ -91,7 +91,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['icon'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "icon" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "icon" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'icon';        
         $context['attributes'] = $context['attributes']->remove('icon');        
@@ -102,7 +102,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['withTrailingIcon'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "withTrailingIcon" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "withTrailingIcon" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'withTrailingIcon';        
         $context['attributes'] = $context['attributes']->remove('withTrailingIcon');        
@@ -113,7 +113,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['inactive'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "inactive" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "inactive" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'inactive';        
         $context['attributes'] = $context['attributes']->remove('inactive');        
@@ -124,7 +124,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['htmlElement'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "htmlElement" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "htmlElement" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'htmlElement';        
         $context['attributes'] = $context['attributes']->remove('htmlElement');        
@@ -135,7 +135,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['htmlAttributes'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "htmlAttributes" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "htmlAttributes" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'htmlAttributes';        
         $context['attributes'] = $context['attributes']->remove('htmlAttributes');        
@@ -146,7 +146,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['href'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "href" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "href" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'href';        
         $context['attributes'] = $context['attributes']->remove('href');        
@@ -157,7 +157,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['action'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "action" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "action" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'action';        
         $context['attributes'] = $context['attributes']->remove('action');        
@@ -168,7 +168,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['method'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "method" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "method" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'method';        
         $context['attributes'] = $context['attributes']->remove('method');        
@@ -179,7 +179,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['type'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "type" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "type" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'type';        
         $context['attributes'] = $context['attributes']->remove('type');        
@@ -190,7 +190,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['name'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "name" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "name" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'name';        
         $context['attributes'] = $context['attributes']->remove('name');        
@@ -201,7 +201,7 @@ class __TwigTemplate_ccabfccb99c35de0e50822b9b0951c49 extends Template
         }
         if (isset($context['__props']['value'])) {
         $componentClass = isset($context['this']) ? get_debug_type($context['this']) : "";
-        throw new \Twig\Error\RuntimeError('Cannot define prop "value" in template "@EasyAdmin/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
+        throw new \Twig\Error\RuntimeError('Cannot define prop "value" in template "@ea/components/Button.html.twig". Property already defined in component class "'.$componentClass.'".');
         }
         $propsNames[] = 'value';        
         $context['attributes'] = $context['attributes']->remove('value');        
@@ -480,7 +480,7 @@ unset($context[$key]);
      */
     public function getTemplateName(): string
     {
-        return "@EasyAdmin/components/Button.html.twig";
+        return "@ea/components/Button.html.twig";
     }
 
     /**
@@ -590,6 +590,6 @@ unset($context[$key]);
         {% endif %}
     </button>
 {% endif %}
-", "@EasyAdmin/components/Button.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\Button.html.twig");
+", "@ea/components/Button.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\Button.html.twig");
     }
 }

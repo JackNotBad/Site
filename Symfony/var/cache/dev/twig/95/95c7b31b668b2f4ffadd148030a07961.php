@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* @EasyAdmin/components/ActionMenu/ActionList/Divider.html.twig */
+/* @ea/components/ActionMenu/ActionList/Divider.html.twig */
 class __TwigTemplate_c1f8c6c3c7f673c466b529a45bde24ff extends Template
 {
     private Source $source;
@@ -39,10 +39,10 @@ class __TwigTemplate_c1f8c6c3c7f673c466b529a45bde24ff extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu/ActionList/Divider.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu/ActionList/Divider.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/components/ActionMenu/ActionList/Divider.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@ea/components/ActionMenu/ActionList/Divider.html.twig"));
 
         // line 1
         yield "<li class=\"dropdown-divider\"></li>
@@ -61,7 +61,7 @@ class __TwigTemplate_c1f8c6c3c7f673c466b529a45bde24ff extends Template
      */
     public function getTemplateName(): string
     {
-        return "@EasyAdmin/components/ActionMenu/ActionList/Divider.html.twig";
+        return "@ea/components/ActionMenu/ActionList/Divider.html.twig";
     }
 
     /**
@@ -75,6 +75,6 @@ class __TwigTemplate_c1f8c6c3c7f673c466b529a45bde24ff extends Template
     public function getSourceContext(): Source
     {
         return new Source("<li class=\"dropdown-divider\"></li>
-", "@EasyAdmin/components/ActionMenu/ActionList/Divider.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\ActionMenu\\ActionList\\Divider.html.twig");
+", "@ea/components/ActionMenu/ActionList/Divider.html.twig", "C:\\wamp64\\www\\Mspr2\\Symfony\\vendor\\easycorp\\easyadmin-bundle\\templates\\components\\ActionMenu\\ActionList\\Divider.html.twig");
     }
 }

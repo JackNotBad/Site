@@ -3,13 +3,5 @@
 {% block title %}Admin Canopées{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/wamp64/www/Mspr2/Symfony/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/wamp64/www/Mspr2/Symfony/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+    <a href="{{ path('admin') }}" class="btn btn-primary">Accéder à l'administration</a>
 {% endblock %}
